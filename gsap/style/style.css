@@ -1,0 +1,97 @@
+
+.scroll-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 1100vh; /* ← از 200vh به 1100vh تغییر کنه */
+  padding: 100px;
+}
+.left {
+  position: sticky;
+  top: 100px;
+  width: 40%;
+  text-align: center;
+}
+
+.right {
+  width: 50%;
+  position: sticky;
+  top: 100px;
+  height: 300px; /* ارتفاع ثابت برای باکس متن */
+  overflow: hidden;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.progress-ring .bg {
+  stroke: #ddd;
+}
+
+.progress-ring .progress {
+  stroke: brown;
+  stroke-dasharray: 565;
+  stroke-dashoffset: 565;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.progress-number {
+  font-size: 28px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.year-scroll {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 120px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.year-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-out;
+}
+
+.year {
+  height: 30px;
+  font-size: 22px;
+  color: #aaa;
+  opacity: 0.4;
+  transition: all 0.3s ease-out;
+}
+
+.year.active {
+  font-size: 28px;
+  color: #000;
+  opacity: 1;
+}
+.text-blocks {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease-out;
+}
+
+.text {
+  min-height: 100px;
+  padding: 10px 0;
+  opacity: 0.3;
+  transition: opacity 0.3s;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.text.active {
+  opacity: 1;
+  font-weight: bold;
+  color: #222;
+}
