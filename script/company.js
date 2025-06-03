@@ -1,3 +1,30 @@
+// Header behavior
+const header = document.querySelector(".naftagaz__items > header");
+let lastScrollY = window.scrollY;
+const companyInfoSection = document.querySelector(".company_information");
+
+window.addEventListener("scroll", () => {
+  const companyTop =
+    companyInfoSection.getBoundingClientRect().top + window.scrollY;
+  const companyBottom = companyTop + companyInfoSection.offsetHeight;
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY >= companyTop && currentScrollY <= companyBottom) {
+    header.classList.add("hide-header");
+  } else {
+    if (currentScrollY === 0) {
+      header.classList.remove("hide-header");
+      header.classList.remove("has-background");
+    } else if (currentScrollY > lastScrollY) {
+      header.classList.add("hide-header");
+      header.classList.remove("has-background");
+    } else {
+      header.classList.remove("hide-header");
+      header.classList.add("has-background");
+    }
+  }
+  lastScrollY = currentScrollY;
+});
 const headerBtn = document.querySelectorAll(".header__detail-btns");
 const headerIcon = document.querySelector(".header__detail-icon");
 const headerContact = document.querySelectorAll(".header__contact");
@@ -5,6 +32,7 @@ const hamburgerMenuBtn = document.querySelector(".hamburger-menu__btn");
 const hamburgerMenuDetail = document.querySelector(".hamburger-menu__detail");
 const hamburgerMenuClose = document.querySelector(".hamburger-menu__btnClose");
 const megaMenuBtn = document.querySelectorAll(".menuSm");
+
 headerBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.classList.toggle("header__detail-btnsActive");
@@ -15,35 +43,32 @@ headerBtn.forEach((btn) => {
     });
   });
 });
+
 hamburgerMenuBtn.addEventListener("click", () => {
   hamburgerMenuDetail.classList.add("hamburger-menu__detailActive");
 });
+
 hamburgerMenuClose.addEventListener("click", () => {
   hamburgerMenuDetail.classList.remove("hamburger-menu__detailActive");
 });
+
 megaMenuBtn.forEach((btn) => {
   const menuSmIcon = btn.querySelector(".menuSm__icon");
   const iconStyle = btn.querySelector(".menuSm__iconStyle");
 
   btn.addEventListener("click", () => {
     btn.classList.toggle("menuSmActive");
-    if (menuSmIcon) {
-      menuSmIcon.classList.toggle("menuSm__iconActive");
-    }
-    if (iconStyle) {
-      iconStyle.classList.toggle("menuSm__icon-styleActive");
-    }
+    if (menuSmIcon) menuSmIcon.classList.toggle("menuSm__iconActive");
+    if (iconStyle) iconStyle.classList.toggle("menuSm__icon-styleActive");
+
     megaMenuBtn.forEach((otherBtn) => {
       if (otherBtn !== btn && otherBtn.classList.contains("menuSmActive")) {
         otherBtn.classList.remove("menuSmActive");
         const otherIcon = otherBtn.querySelector(".menuSm__icon");
         const otherIconStyle = otherBtn.querySelector(".menuSm__iconStyle");
-        if (otherIcon) {
-          otherIcon.classList.remove("menuSm__iconActive");
-        }
-        if (otherIconStyle) {
+        if (otherIcon) otherIcon.classList.remove("menuSm__iconActive");
+        if (otherIconStyle)
           otherIconStyle.classList.remove("menuSm__icon-styleActive");
-        }
       }
     });
   });
@@ -615,11 +640,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const locationCircle = document.querySelector(".company-location_circle");
   const locationImg = document.querySelector(".company-location_img");
   const companyLocationTwo = document.querySelector(".company-locationTwo");
+  const locationTextSm = document.querySelector(".company-location_text-sm");
   const offcanvasDetails = document.querySelectorAll(
     ".company-location_offcanvas--detail"
   );
   gsap.set(locationH2, { opacity: 0, y: 50 });
   gsap.set(locationText, { opacity: 0, y: 50 });
+  gsap.set(locationTextSm, { opacity: 0, y: 50 });
   gsap.set(locationCircle, { scale: 0 });
   gsap.set(locationImg, { height: 0 });
   gsap.set(companyLocationTwo, { opacity: 0, visibility: "hidden" });
@@ -646,6 +673,13 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 0.2,
         ease: "power2.out",
       });
+      gsap.to(locationTextSm, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.2,
+        ease: "power2.out",
+      });
       gsap.to(locationCircle, { scale: 1, duration: 1, ease: "back.out(1.7)" });
       gsap.to(locationImg, { height: 300, duration: 1, ease: "power2.out" });
     },
@@ -657,6 +691,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.in",
       });
       gsap.to(locationText, {
+        opacity: 0,
+        y: -50,
+        duration: 0.5,
+        delay: 0.1,
+        ease: "power2.in",
+      });
+      gsap.to(locationTextSm, {
         opacity: 0,
         y: -50,
         duration: 0.5,
@@ -682,6 +723,13 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 0.5,
       });
       gsap.to(locationText, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.7,
+        ease: "power2.out",
+      });
+      gsap.to(locationTextSm, {
         opacity: 1,
         y: 0,
         duration: 1,
@@ -721,6 +769,13 @@ document.addEventListener("DOMContentLoaded", () => {
         delay: 0.1,
         ease: "power2.in",
       });
+      gsap.to(locationTextSm, {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        delay: 0.1,
+        ease: "power2.in",
+      });
       gsap.to(locationCircle, { scale: 0, duration: 0.5, ease: "power2.in" });
       gsap.to(locationImg, { height: 0, duration: 0.5, ease: "power2.in" });
       gsap.to(companyLocationTwo, {
@@ -754,3 +809,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+
