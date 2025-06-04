@@ -529,9 +529,130 @@ header.hide-header {
 /* company_location */
 .company-location {
   width: 100%;
-  height: 1600px;
-  background-color: var(--bg-color);
+  height: 1400px;
+  background-color: var(--color);
   transform: translateY(34px);
+  position: relative;
+  overflow: hidden;
+}
+.company-location_map {
+  position: absolute;
+  top: 350px;
+  right: 100px;
+  z-index: 1;
+}
+.company-location_text-sm {
+  opacity: 0;
+  visibility: hidden;
+}
+.company-location_circle {
+  position: absolute;
+  top: 350px;
+  right: 100px;
+  z-index: 10;
+  transform: scale(0) rotate(180deg);
+  transition: all 0.4s;
+  opacity: 0.8;
+}
+.company-location_title {
+  color: var(--snow);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+  width: 88%;
+  position: absolute;
+  top: 50px;
+  left: 70px;
+}
+.company-location_detail {
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  display: flex;
+  width: 88%;
+  gap: 180px;
+}
+.company-location_detail span {
+  font-size: 100px;
+  color: var(--bg-second-color);
+}
+.company-location_detail > p {
+  width: 50%;
+  color: var(--snow);
+  padding: 50px 0;
+}
+.company-location_detail--text {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 20px;
+}
+.company-location_detail--text p {
+  color: var(--snow);
+}
+.company-location_text {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+  position: absolute;
+  top: 660px;
+  left: 90px;
+  color: var(--snow);
+  opacity: 0;
+  transition: all 0.4s;
+}
+.company-location_text p:last-child {
+  color: var(--text-color);
+}
+.company-location_img {
+  position: absolute;
+  top: 550px;
+  right: 100px;
+  height: 0;
+  transition: all 0.4s;
+  object-fit: cover;
+}
+.company-location_btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--snow);
+  position: absolute;
+  top: 850px;
+  left: 100px;
+}
+.company-location_btns--icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background-color: var(--snow);
+  color: var(--bg-color);
+  position: relative;
+  border-radius: 100%;
+  z-index: 1;
+}
+.company-location_btns:hover .company-location_btns--icon {
+  color: var(--snow);
+}
+.company-location_btns--icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-second-color);
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: 0.4s;
+  border-radius: 100%;
+  z-index: -1;
+}
+.company-location_btns:hover .company-location_btns--icon::before {
+  transform: scale(1);
 }
 /* sliders */
 .slider_title {
@@ -700,7 +821,7 @@ header.hide-header {
   height: 600px;
   position: relative;
   overflow: hidden;
-  transform: translateX(-150px) translateY(-350px);
+  transform: translateX(-150px) translateY(-400px);
   margin-top: 100px;
 }
 .slidersTwo > .slider_title {
@@ -1244,7 +1365,7 @@ footer {
   .company-detail_man {
     width: 300px;
     position: absolute;
-    bottom: -35px;
+    bottom: -10px;
     left: 10px;
     transform-style: preserve-3d;
     will-change: transform;
@@ -1267,6 +1388,92 @@ footer {
     z-index: -1;
     pointer-events: none;
     overflow: hidden;
+  }
+  /* company-location */
+  .company-location {
+    width: 100%;
+    height: 1400px;
+    background-color: var(--color);
+    transform: translateY(34px);
+    position: relative;
+    overflow: hidden;
+  }
+  .company-location_title {
+    left: 20px;
+  }
+  .company-location_map {
+    top: 400px;
+    right: -100px;
+    z-index: 1;
+    width: 550px;
+  }
+  .company-location_circle {
+    top: 400px;
+    right: -40px;
+    width: 450px;
+    z-index: 10;
+    transform: rotate(90deg);
+  }
+  .circle_two {
+    transform: translateY(200px) translateX(300px);
+  }
+  .circle_two-dot {
+    transform: translateY(200px) translateX(300px);
+  }
+  .circle_two-line {
+    transform: translateY(200px) translateX(300px);
+  }
+  .company-location_text-sm {
+    color: var(--snow);
+    position: absolute;
+    top: 750px;
+    right: 30px;
+    font-size: 10px;
+    width: 150px;
+    opacity: 1;
+    visibility: visible;
+  }
+  .company-location_text {
+    top: 500px;
+    z-index: 2;
+    left: 80px;
+  }
+  .company-location_text p:last-child {
+    color: var(--text-color);
+  }
+  .company-location_img {
+    display: none;
+  }
+  .company-location_btns {
+    left: 50px;
+    top: 950px;
+  }
+  .company-location_detail {
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 20px;
+  }
+  .company-location_detail span {
+    font-size: 50px;
+    color: var(--bg-second-color);
+  }
+  .company-location_detail > p {
+    width: 100%;
+    padding: 10px 20px;
+  }
+  .company-location_detail--text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .company-location_detail--text p {
+    color: var(--snow);
   }
   /* slider */
   .sliders {
@@ -1324,7 +1531,7 @@ footer {
   /* slider2 */
   .slidersTwo {
     width: 100%;
-    transform: translateX(0px) translateY(-350px);
+    transform: translateX(0px) translateY(-400px);
   }
   .slider__imgTwo {
     width: 400px;

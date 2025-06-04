@@ -119,6 +119,24 @@ megaMenuBtn.forEach((btn) => {
     });
   });
 });
+// company_intro
+const transformBtn = document.querySelector(".company-detail_btn");
+const transformItem = document.querySelector(".company-location");
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
+transformBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const offsetTop = transformItem.getBoundingClientRect().top + window.scrollY;
+
+  gsap.to(window, {
+    duration: 2,
+    scrollTo: {
+      y: offsetTop,
+      autoKill: false,
+    },
+    ease: "power2.out",
+  });
+});
 // slider1
 const nextBtn = document.querySelector(".slider_btn-next");
 const prevBtn = document.querySelector(".slider_btn-prev");
@@ -383,5 +401,45 @@ topBtn.forEach((btn) => {
       left: 0,
       behavior: "smooth",
     });
+  });
+});
+// Location Scroll Animation
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const companyLocationSection = document.querySelector(".company-location");
+  const locationH2 = document.querySelector(".company-location_h2");
+  const locationText = document.querySelector(".company-location_text");
+  const locationCircle = document.querySelector(".company-location_circle");
+  const locationImg = document.querySelector(".company-location_img");
+  const locationTextSm = document.querySelector(".company-location_text-sm");
+  gsap.set(locationH2, { opacity: 0, y: 50 });
+  gsap.set(locationText, { opacity: 0, y: 50 });
+  gsap.set(locationTextSm, { opacity: 0, y: 50 });
+  gsap.set(locationCircle, { scale: 0 });
+  gsap.set(locationImg, { height: 0 });
+  // Set initial state for offcanvas details
+  ScrollTrigger.create({
+    trigger: companyLocationSection,
+    start: "top top",
+    end: "top top",
+    scrub: true,
+    onEnter: () => {
+      gsap.to(locationText, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        delay: 0.2,
+        ease: "power2.out",
+      });
+      gsap.to(locationTextSm, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        delay: 0.2,
+        ease: "power2.out",
+      });
+      gsap.to(locationCircle, { scale: 1, duration: 0.5, ease: "back.out(1.7)" });
+      gsap.to(locationImg, { height: 300, duration: 0.5, ease: "power2.out" });
+    },
   });
 });
