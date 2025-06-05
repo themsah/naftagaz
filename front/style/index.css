@@ -706,7 +706,6 @@ header.hide-header {
   height: 700px;
   position: relative;
   overflow: hidden;
-  transform: translateY(-620px);
 }
 .slider {
   height: 100%;
@@ -822,7 +821,7 @@ header.hide-header {
   position: relative;
   overflow: hidden;
   transform: translateX(-150px) translateY(-400px);
-  margin-top: 100px;
+  margin-bottom: -300px;
 }
 .slidersTwo > .slider_title {
   top: 20px;
@@ -949,7 +948,7 @@ header.hide-header {
   flex-direction: column;
   padding: 200px 80px;
   position: relative;
-  transform: translateY(-300px);
+  margin-bottom: -200px;
 }
 .company-drilling__title {
   color: var(--bg-second-color);
@@ -994,11 +993,206 @@ header.hide-header {
   font-size: 60px;
   color: var(--bg-color);
 }
+/* company-pressCenter */
+.company-PressCenter {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 100px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.company-PressCenter_title {
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+  color: var(--bg-color);
+}
+.company-pressCenter_btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.company-pressCenter_btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.company-pressCenter_btn--style {
+  border: 1px solid var(--border-color);
+  width: 130px;
+  padding: 15px;
+  border-radius: 60px;
+  text-align: center;
+  transition: 0.4s;
+  cursor: pointer;
+  color: var(--bg-color);
+}
+.company-pressCenter_btn--style:hover {
+  border: 1px solid var(--bg-color);
+}
+.company-pressCenter_btn--style.active {
+  color: var(--snow);
+  border: none;
+  background-color: var(--bg-color);
+  transition: 1s;
+}
+.company-pressCenter_slider--btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.company-pressCenter_slider--btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: var(--border-second-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  pointer-events: none;
+}
+.company-pressCenter_slider--btn.active {
+  background-color: var(--bg-color);
+  color: var(--snow);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  pointer-events: all;
+  transition: 0.4s;
+}
+.company-pressCenter_slider--btn.active::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: var(--bg-second-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: 0.4s;
+  transform: scale(0);
+  z-index: -1;
+}
+.company-pressCenter_slider--btn.active:hover::before {
+  transform: scale(1);
+}
+.company-pressCenter_slider--prevBtn {
+  transform: rotate(180deg);
+}
+.company-pressCenter_detail {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+  top: 300px;
+  right: 80px;
+}
+.company-pressCenter_detail--items {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--border-second-color);
+  height: 450px;
+  padding: 30px 40px;
+  cursor: pointer;
+  position: relative;
+}
+.company-pressCenter_detail--itemsText {
+  height: 80%;
+  z-index: -2;
+}
+.company-pressCenter_detail--itemsTextHover {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: 1s;
+  transform: translateY(-200px);
+  color: var(--snow);
+}
+.company-pressCenter_detail--items:hover
+  .company-pressCenter_detail--itemsTextHover {
+  opacity: 1;
+  visibility: visible;
+}
+.company-pressCenter_detail--itemsSpan {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 10px 0;
+  height: 20%;
+  z-index: 1;
+  border-top: 1px solid var(--border-color);
+}
+.company-pressCenter_detail--itemsSpan p {
+  color: var(--bg-color);
+  transition: 0.4s;
+}
+.company-pressCenter_detail--itemsSpan span {
+  font-size: 60px;
+  color: var(--bg-second-color);
+  height: 70px;
+  transition: 0.4s;
+}
+.company-pressCenter_detail--items:hover
+  > .company-pressCenter_detail--itemsSpan
+  p,
+.company-pressCenter_detail--items:hover
+  > .company-pressCenter_detail--itemsSpan
+  span {
+  color: var(--snow);
+}
+.company-pressCenter_detail--itemsImg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transition: 0.6s;
+}
+.company-pressCenter_detail--items:hover
+  > .company-pressCenter_detail--itemsImg {
+  height: 100%;
+}
+.company-pressCenter_detail--items::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #00000060;
+  z-index: -1;
+  transition: 0.6s;
+}
+.company-pressCenter_detail--items:hover::after {
+  height: 100%;
+}
+#media,
+#Events {
+  display: none;
+}
+#news,
+#media,
+#Events {
+  transition: 1s;
+}
+/* company-partners */
 .company-partners {
   display: flex;
   align-items: center;
   width: 100%;
   height: 250px;
+  margin-top: 50px;
 }
 .company-partners_items {
   width: 20%;
@@ -1532,6 +1726,7 @@ footer {
   .slidersTwo {
     width: 100%;
     transform: translateX(0px) translateY(-400px);
+    margin-top: 100px;
   }
   .slider__imgTwo {
     width: 400px;
@@ -1604,6 +1799,7 @@ footer {
     padding: 40px 20px;
     position: relative;
     height: 500px;
+    margin-bottom: 250px;
   }
   .company-drilling__text {
     color: var(--bg-second-color);
@@ -1633,6 +1829,49 @@ footer {
   .company-drilling_detail--item p {
     font-size: 20px;
   }
+  /* company-pressCenter */
+  .company-PressCenter {
+    padding: 100px 20px;
+  }
+  .company-pressCenter_btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .company-pressCenter_btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .company-pressCenter_btn--style {
+    width: 100px;
+    font-size: 12px;
+  }
+  .company-pressCenter_slider--btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .company-pressCenter_detail {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: absolute;
+    top: 350px;
+    right: 40px;
+  }
+  .company-pressCenter_detail--items {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--border-second-color);
+    height: 450px;
+    padding: 30px 40px;
+    cursor: pointer;
+    position: relative;
+  }
+  /* company-partners */
   .company-partners {
     display: flex;
     align-items: center;
