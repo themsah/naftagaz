@@ -27,31 +27,53 @@ window.addEventListener("scroll", () => {
 });
 const headerBtn = document.querySelectorAll(".header__detail-btns");
 const headerIcon = document.querySelector(".header__detail-icon");
-const headerContact = document.querySelectorAll(".header__contact");
+const headerContacts = document.querySelectorAll(".header__contact");
 const hamburgerMenuBtn = document.querySelector(".hamburger-menu__btn");
 const hamburgerMenuDetail = document.querySelector(".hamburger-menu__detail");
 const hamburgerMenuClose = document.querySelector(".hamburger-menu__btnClose");
 const megaMenuBtn = document.querySelectorAll(".menuSm");
-
 headerBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (event) => {
+    event.stopPropagation();
     btn.classList.toggle("header__detail-btnsActive");
     headerIcon.classList.toggle("header__detail-iconActive");
     btn.classList.toggle("header__detail-hoverable");
-    headerContact.forEach((item) => {
+    headerContacts.forEach((item) => {
       item.classList.toggle("header__contactActive");
     });
   });
 });
-
+document.addEventListener("click", (event) => {
+  headerContacts.forEach((contact) => {
+    let isClickInsideHeaderContact = contact.contains(event.target);
+    let isClickOnHeaderBtn = false;
+    headerBtn.forEach((btn) => {
+      if (btn.contains(event.target)) {
+        isClickOnHeaderBtn = true;
+      }
+    });
+    if (
+      contact.classList.contains("header__contactActive") &&
+      !isClickInsideHeaderContact &&
+      !isClickOnHeaderBtn
+    ) {
+      contact.classList.remove("header__contactActive");
+      headerBtn.forEach((btn) => {
+        btn.classList.remove("header__detail-btnsActive");
+        btn.classList.add("header__detail-hoverable");
+      });
+      if (headerIcon) {
+        headerIcon.classList.remove("header__detail-iconActive");
+      }
+    }
+  });
+});
 hamburgerMenuBtn.addEventListener("click", () => {
   hamburgerMenuDetail.classList.add("hamburger-menu__detailActive");
 });
-
 hamburgerMenuClose.addEventListener("click", () => {
   hamburgerMenuDetail.classList.remove("hamburger-menu__detailActive");
 });
-
 megaMenuBtn.forEach((btn) => {
   const menuSmIcon = btn.querySelector(".menuSm__icon");
   const iconStyle = btn.querySelector(".menuSm__iconStyle");
@@ -253,6 +275,42 @@ const sliderTwoDetail = [
     task: "مدیرعامل",
   },
 ];
+const modalBtn = document.querySelector(".slider-detail_btns");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close");
+const modalImg = document.querySelector(".modal-img");
+const modalImgMobile = document.querySelector(".modal-img-mobile");
+const modalDetail = document.querySelector(".modal-detail");
+const modalOverlay = document.querySelector(".modal-overlay");
+modalBtn.addEventListener("click", () => {
+  modal.classList.add("active");
+  modalClose.classList.add("active");
+  if (window.innerWidth <= 640) {
+    modalImg.classList.remove("active");
+    modalImgMobile.classList.add("active");
+  } else {
+    modalImg.classList.add("active");
+    modalImgMobile.classList.remove("active");
+  }
+  modalOverlay.scrollTop = 0;
+});
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("active");
+  modalClose.classList.remove("active");
+  modalImg.classList.remove("active");
+  modalImgMobile.classList.remove("active");
+});
+window.addEventListener("resize", () => {
+  if (modal.classList.contains("active")) {
+    if (window.innerWidth <= 640) {
+      modalImg.classList.remove("active");
+      modalImgMobile.classList.add("active");
+    } else {
+      modalImg.classList.add("active");
+      modalImgMobile.classList.remove("active");
+    }
+  }
+});
 function startProgressBarAnimation() {
   if (progressBarTween) {
     progressBarTween.kill();
@@ -809,6 +867,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-
-
