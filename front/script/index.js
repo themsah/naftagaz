@@ -258,22 +258,58 @@ const sliderTwoDetail = [
   {
     id: 1,
     img: "../img/twoman.jpg",
-    text: "Tural Kerimov",
+    text: "تورال کریموف",
     detail:
       "The شرکت بسیار واجد شرایط اجرایی کارکنان با گسترده تجربه در ... صنعت<br />فراهم کردن «کلید در دست» پروژه توسعه خدمات به به صورت عمودی یکپارچه روغن و گاز<br />شرکت‌ها تأمین از تدارکات خدمات است همچنین در میان ... شرکت اولویت‌ها",
-    btnImg: "../img/twoman.jpg", // عکس کوچک برای اسلاید بعدی
+    btnImg: "../img/twoman.jpg", 
     task: "رئیس هیئت مدیره",
   },
   {
     id: 2,
     img: "../img/oneman.jpg",
-    text: "Nikolay Grishankov",
+    text: "نیکولای گریشانکوف",
     detail:
       "The شرکت بسیار واجد شرایط اجرایی کارکنان با تجربه عمیق در زمینه پروژه‌های بزرگ صنعتی.<br />تمرکز بر راه‌حل‌های نوآورانه و پایدار برای توسعه صنعت نفت و گاز.<br />ارائه خدمات کامل از طراحی تا اجرا، با رعایت بالاترین استانداردهای ایمنی و کیفیت.",
-    btnImg: "../img/oneman.jpg", // عکس کوچک برای اسلاید بعدی
+    btnImg: "../img/oneman.jpg", 
     task: "مدیرعامل",
   },
 ];
+const modalBtn = document.querySelector(".slider-detail_btns");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close");
+const modalImg = document.querySelector(".modal-img");
+const modalImgMobile = document.querySelector(".modal-img-mobile"); 
+const modalDetail = document.querySelector(".modal-detail");
+const modalOverlay = document.querySelector(".modal-overlay");
+modalBtn.addEventListener("click", () => {
+  modal.classList.add("active");
+  modalClose.classList.add("active");
+  if (window.innerWidth <= 640) {
+    modalImg.classList.remove("active");
+    modalImgMobile.classList.add("active"); 
+  } else {
+    modalImg.classList.add("active");
+    modalImgMobile.classList.remove("active"); 
+  }
+  modalOverlay.scrollTop = 0;
+});
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("active");
+  modalClose.classList.remove("active");
+  modalImg.classList.remove("active");
+  modalImgMobile.classList.remove("active"); 
+});
+window.addEventListener("resize", () => {
+  if (modal.classList.contains("active")) {
+    if (window.innerWidth <= 640) {
+      modalImg.classList.remove("active");
+      modalImgMobile.classList.add("active"); 
+    } else {
+      modalImg.classList.add("active");
+      modalImgMobile.classList.remove("active"); 
+    }
+  }
+});
 function startProgressBarAnimation() {
   if (progressBarTween) {
     progressBarTween.kill();
@@ -448,22 +484,28 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // pressCenter
-const sliderThreeBtn = document.querySelectorAll(".company-pressCenter_btn--style");
+const sliderThreeBtn = document.querySelectorAll(
+  ".company-pressCenter_btn--style"
+);
 const sliderNews = document.querySelector("#news");
 const sliderMedia = document.querySelector("#media");
 const sliderEvents = document.querySelector("#Events");
-const preesNextBtn = document.querySelector(".company-pressCenter_slider--nextBtn");
-const pressPrevBtn = document.querySelector(".company-pressCenter_slider--prevBtn");
-const sliderDetails = document.querySelectorAll(".company-pressCenter_detail"); 
+const preesNextBtn = document.querySelector(
+  ".company-pressCenter_slider--nextBtn"
+);
+const pressPrevBtn = document.querySelector(
+  ".company-pressCenter_slider--prevBtn"
+);
+const sliderDetails = document.querySelectorAll(".company-pressCenter_detail");
 let currentTranslateX = 0;
-const step = 500; 
+const step = 500;
 
 const maxTranslateXConfig = {
-    news: 1750, 
-    media: 1100, 
-    Events: 1100 
-}
-let currentMaxTranslateX = maxTranslateXConfig.news; 
+  news: 1750,
+  media: 1100,
+  Events: 1100,
+};
+let currentMaxTranslateX = maxTranslateXConfig.news;
 function updateButtonStates() {
   if (currentTranslateX === 0) {
     pressPrevBtn.classList.remove("active");
@@ -484,35 +526,35 @@ sliderThreeBtn.forEach((item) => {
     });
     item.classList.add("active");
     const dataShow = item.dataset.show;
-    sliderDetails.forEach(detail => {
+    sliderDetails.forEach((detail) => {
       detail.style.opacity = "0";
       detail.style.display = "none";
     });
     switch (dataShow) {
       case "news":
         sliderNews.style.opacity = "1";
-        sliderNews.style.display = "flex"; 
+        sliderNews.style.display = "flex";
         currentMaxTranslateX = maxTranslateXConfig.news;
         break;
       case "media":
         sliderMedia.style.opacity = "1";
-        sliderMedia.style.display = "flex"; 
+        sliderMedia.style.display = "flex";
         currentMaxTranslateX = maxTranslateXConfig.media;
         break;
       case "Events":
         sliderEvents.style.opacity = "1";
-        sliderEvents.style.display = "flex"; 
+        sliderEvents.style.display = "flex";
         currentMaxTranslateX = maxTranslateXConfig.Events;
         break;
       default:
         sliderNews.style.opacity = "1";
-        sliderNews.style.display = "flex"; 
+        sliderNews.style.display = "flex";
         currentMaxTranslateX = maxTranslateXConfig.news;
         break;
     }
     currentTranslateX = 0;
     sliderDetails.forEach((detail) => {
-        detail.style.transform = `translateX(-${currentTranslateX}px)`;
+      detail.style.transform = `translateX(-${currentTranslateX}px)`;
     });
     updateButtonStates();
   });
@@ -524,7 +566,7 @@ preesNextBtn.addEventListener("click", () => {
       currentTranslateX = currentMaxTranslateX;
     }
     sliderDetails.forEach((item) => {
-      item.style.transform = `translateX(${currentTranslateX}px)`; 
+      item.style.transform = `translateX(${currentTranslateX}px)`;
     });
     updateButtonStates();
   }
@@ -536,7 +578,7 @@ pressPrevBtn.addEventListener("click", () => {
       currentTranslateX = 0;
     }
     sliderDetails.forEach((item) => {
-      item.style.transform = `translateX(${currentTranslateX}px)`; 
+      item.style.transform = `translateX(${currentTranslateX}px)`;
     });
     updateButtonStates();
   }
