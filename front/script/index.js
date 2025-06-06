@@ -1,7 +1,6 @@
 // header
 const header = document.querySelector(".naftagaz__items > header");
 let lastScrollY = window.scrollY;
-
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
 
@@ -78,7 +77,6 @@ const hamburgerMenuBtn = document.querySelector(".hamburger-menu__btn");
 const hamburgerMenuDetail = document.querySelector(".hamburger-menu__detail");
 const hamburgerMenuClose = document.querySelector(".hamburger-menu__btnClose");
 const megaMenuBtn = document.querySelectorAll(".menuSm");
-
 headerBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.classList.toggle("header__detail-btnsActive");
@@ -89,15 +87,12 @@ headerBtn.forEach((btn) => {
     });
   });
 });
-
 hamburgerMenuBtn.addEventListener("click", () => {
   hamburgerMenuDetail.classList.add("hamburger-menu__detailActive");
 });
-
 hamburgerMenuClose.addEventListener("click", () => {
   hamburgerMenuDetail.classList.remove("hamburger-menu__detailActive");
 });
-
 megaMenuBtn.forEach((btn) => {
   const menuSmIcon = btn.querySelector(".menuSm__icon");
   const iconStyle = btn.querySelector(".menuSm__iconStyle");
@@ -484,41 +479,64 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // pressCenter
-const sliderThreeBtn = document.querySelectorAll(
-  ".company-pressCenter_btn--style"
-);
-const sliderNews = document.querySelector("#news");
-const sliderMedia = document.querySelector("#media");
-const sliderEvents = document.querySelector("#Events");
-const preesNextBtn = document.querySelector(
-  ".company-pressCenter_slider--nextBtn"
-);
-const pressPrevBtn = document.querySelector(
-  ".company-pressCenter_slider--prevBtn"
-);
-const sliderDetails = document.querySelectorAll(".company-pressCenter_detail");
 let currentTranslateX = 0;
-const step = 500;
+let dynamicStep = 0;
+let currentMaxTranslateX = 0;
+function calculateAndApplySliderTransforms() {
+  const activeSliderElement = document.querySelector(".company-pressCenter_detail[style*='display: flex']");
+  if (!activeSliderElement) return;
+  const sliderItems = activeSliderElement.querySelectorAll(".company-pressCenter_detail--items");
+  if (sliderItems.length === 0) {
+    dynamicStep = 0;
+    currentMaxTranslateX = 0;
+    currentTranslateX = 0;
+    activeSliderElement.style.transform = `translateX(0px)`;
+    return;
+  }
+  const firstItem = sliderItems[0];
+  const itemWidth = firstItem.offsetWidth;
+  const itemGap = 30;
+  dynamicStep = itemWidth + itemGap;
+  const totalContentWidth = (sliderItems.length * itemWidth) + ((sliderItems.length - 1) * itemGap);
+  const clippingArea = document.querySelector(".company-PressCenter");
+  const clippingAreaStyle = window.getComputedStyle(clippingArea);
+  const clippingPaddingLeft = parseFloat(clippingAreaStyle.paddingLeft || 0);
+  const clippingPaddingRight = parseFloat(clippingAreaStyle.paddingRight || 0);
+  const visibleClippingWidth = clippingArea.offsetWidth - clippingPaddingLeft - clippingPaddingRight;
 
-const maxTranslateXConfig = {
-  news: 1750,
-  media: 1100,
-  Events: 1100,
-};
-let currentMaxTranslateX = maxTranslateXConfig.news;
+  currentMaxTranslateX = totalContentWidth - visibleClippingWidth;
+
+  if (currentMaxTranslateX < 0) {
+    currentMaxTranslateX = 0;
+  }
+
+  if (currentTranslateX > currentMaxTranslateX) {
+    currentTranslateX = currentMaxTranslateX;
+  } else if (currentTranslateX < 0) {
+    currentTranslateX = 0;
+  }
+
+  activeSliderElement.style.transform = `translateX(${currentTranslateX}px)`;
+  
+  updateButtonStates();
+}
 function updateButtonStates() {
-  if (currentTranslateX === 0) {
+  if (currentTranslateX <= 0) {
     pressPrevBtn.classList.remove("active");
   } else {
     pressPrevBtn.classList.add("active");
   }
-  if (currentTranslateX >= currentMaxTranslateX) {
+  const epsilon = 1;
+  if (currentMaxTranslateX === 0 || currentTranslateX >= currentMaxTranslateX - epsilon) {
     preesNextBtn.classList.remove("active");
   } else {
     preesNextBtn.classList.add("active");
   }
 }
-updateButtonStates();
+const sliderThreeBtn = document.querySelectorAll(
+  ".company-pressCenter_btn--style"
+);
+const sliderDetails = document.querySelectorAll(".company-pressCenter_detail");
 sliderThreeBtn.forEach((item) => {
   item.addEventListener("click", () => {
     sliderThreeBtn.forEach((btn) => {
@@ -530,56 +548,50 @@ sliderThreeBtn.forEach((item) => {
       detail.style.opacity = "0";
       detail.style.display = "none";
     });
-    switch (dataShow) {
-      case "news":
-        sliderNews.style.opacity = "1";
-        sliderNews.style.display = "flex";
-        currentMaxTranslateX = maxTranslateXConfig.news;
-        break;
-      case "media":
-        sliderMedia.style.opacity = "1";
-        sliderMedia.style.display = "flex";
-        currentMaxTranslateX = maxTranslateXConfig.media;
-        break;
-      case "Events":
-        sliderEvents.style.opacity = "1";
-        sliderEvents.style.display = "flex";
-        currentMaxTranslateX = maxTranslateXConfig.Events;
-        break;
-      default:
-        sliderNews.style.opacity = "1";
-        sliderNews.style.display = "flex";
-        currentMaxTranslateX = maxTranslateXConfig.news;
-        break;
+    const targetSlider = document.getElementById(dataShow);
+    if (targetSlider) {
+      targetSlider.style.opacity = "1";
+      targetSlider.style.display = "flex";
+      
+      currentTranslateX = 0; 
+      
+      calculateAndApplySliderTransforms(); 
     }
-    currentTranslateX = 0;
-    sliderDetails.forEach((detail) => {
-      detail.style.transform = `translateX(-${currentTranslateX}px)`;
-    });
-    updateButtonStates();
   });
 });
+const preesNextBtn = document.querySelector(
+  ".company-pressCenter_slider--nextBtn"
+);
 preesNextBtn.addEventListener("click", () => {
-  if (currentTranslateX < currentMaxTranslateX) {
-    currentTranslateX += step;
-    if (currentTranslateX > currentMaxTranslateX) {
-      currentTranslateX = currentMaxTranslateX;
-    }
-    sliderDetails.forEach((item) => {
-      item.style.transform = `translateX(${currentTranslateX}px)`;
-    });
-    updateButtonStates();
-  }
+  currentTranslateX += dynamicStep;
+  calculateAndApplySliderTransforms();
 });
+const pressPrevBtn = document.querySelector(
+  ".company-pressCenter_slider--prevBtn"
+);
 pressPrevBtn.addEventListener("click", () => {
-  if (currentTranslateX > 0) {
-    currentTranslateX -= step;
-    if (currentTranslateX < 0) {
+  currentTranslateX -= dynamicStep;
+  calculateAndApplySliderTransforms();
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const initiallyActiveButton = document.querySelector(".company-pressCenter_btn--style.active");
+  if (initiallyActiveButton) {
+    const defaultSliderId = initiallyActiveButton.dataset.show;
+    const defaultSliderElement = document.getElementById(defaultSliderId);
+    if(defaultSliderElement) {
+      defaultSliderElement.style.opacity = "1";
+      defaultSliderElement.style.display = "flex";
       currentTranslateX = 0;
+      calculateAndApplySliderTransforms();
     }
-    sliderDetails.forEach((item) => {
-      item.style.transform = `translateX(${currentTranslateX}px)`;
-    });
-    updateButtonStates();
+  } else {
+    const defaultSliderElement = document.getElementById('news');
+    if(defaultSliderElement) {
+      defaultSliderElement.style.opacity = "1";
+      defaultSliderElement.style.display = "flex";
+      currentTranslateX = 0;
+      calculateAndApplySliderTransforms();
+    }
   }
+  window.addEventListener("resize", calculateAndApplySliderTransforms);
 });
