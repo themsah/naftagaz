@@ -3,7 +3,6 @@ const header = document.querySelector(".naftagaz__items > header");
 let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
-
   if (currentScrollY === 0) {
     header.classList.remove("hide-header");
     header.classList.remove("has-background");
@@ -29,7 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
     console.warn("یکی از المنت‌های شرکت پیدا نشد.");
     return;
   }
-
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
@@ -72,19 +70,41 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 const headerBtn = document.querySelectorAll(".header__detail-btns");
 const headerIcon = document.querySelector(".header__detail-icon");
-const headerContact = document.querySelectorAll(".header__contact");
+const headerContacts = document.querySelectorAll(".header__contact"); 
 const hamburgerMenuBtn = document.querySelector(".hamburger-menu__btn");
 const hamburgerMenuDetail = document.querySelector(".hamburger-menu__detail");
 const hamburgerMenuClose = document.querySelector(".hamburger-menu__btnClose");
 const megaMenuBtn = document.querySelectorAll(".menuSm");
 headerBtn.forEach((btn) => {
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (event) => {
+    event.stopPropagation();
     btn.classList.toggle("header__detail-btnsActive");
     headerIcon.classList.toggle("header__detail-iconActive");
-    btn.classList.toggle("header__detail-hoverable");
-    headerContact.forEach((item) => {
+    btn.classList.toggle("header__detail-hoverable"); 
+    headerContacts.forEach((item) => {
       item.classList.toggle("header__contactActive");
     });
+  });
+});
+document.addEventListener("click", (event) => {
+  headerContacts.forEach((contact) => {
+    let isClickInsideHeaderContact = contact.contains(event.target);
+    let isClickOnHeaderBtn = false;
+    headerBtn.forEach(btn => {
+      if (btn.contains(event.target)) {
+        isClickOnHeaderBtn = true;
+      }
+    });
+    if (contact.classList.contains("header__contactActive") && !isClickInsideHeaderContact && !isClickOnHeaderBtn) {
+      contact.classList.remove("header__contactActive");
+      headerBtn.forEach(btn => {
+        btn.classList.remove("header__detail-btnsActive");
+        btn.classList.add("header__detail-hoverable"); 
+      });
+      if (headerIcon) { 
+        headerIcon.classList.remove("header__detail-iconActive");
+      }
+    }
   });
 });
 hamburgerMenuBtn.addEventListener("click", () => {
