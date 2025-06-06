@@ -867,3 +867,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// Init Swipers
+const yearsSwiper = new Swiper(".years-swiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  centeredSlides: true,
+  slideToClickedSlide: true,
+  on: {
+    slideChange: function () {
+      const index = this.activeIndex;
+      contentSwiper.slideTo(index);
+      updateProgressCircle(index);
+    },
+  },
+  breakpoints: {
+    641: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
+});
+const contentSwiper = new Swiper(".content-swiper", {
+  slidesPerView: 1,
+  allowTouchMove: false,
+  on: {
+    init: function () {
+      initDetailSwipers();
+    },
+  },
+});
+function updateProgressCircle(index) {
+  const total = 10;
+  const percent = (index / total) * 100;
+  const offset = 100 - percent;
+  document.querySelector(".circle").style.strokeDashoffset = offset;
+}
+function initDetailSwipers() {
+  document.querySelectorAll(".detail-swiper").forEach(function (element) {
+    if (element.swiper) {
+      element.swiper.destroy(true, true);
+    }
+    new Swiper(element, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      autoHeight: true,
+    });
+  });
+}
+AOS.init();
+updateProgressCircle(0);

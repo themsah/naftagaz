@@ -1729,7 +1729,7 @@ footer {
   .company-detail_man {
     width: 300px;
     position: absolute;
-    bottom: -10px;
+    bottom: 0px;
     left: 10px;
     transform-style: preserve-3d;
     will-change: transform;
