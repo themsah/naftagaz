@@ -2,7 +2,6 @@
 const header = document.querySelector(".naftagaz__items > header");
 let lastScrollY = window.scrollY;
 const companyInfoSection = document.querySelector(".company_information");
-
 window.addEventListener("scroll", () => {
   const companyTop =
     companyInfoSection.getBoundingClientRect().top + window.scrollY;
