@@ -86,6 +86,24 @@ megaMenuBtn.forEach((btn) => {
     });
   });
 });
+// company-drilling transform
+const transformBtn = document.querySelector(".company-drilling_icon--btn");
+const transformItem = document.querySelector(".company-drilling_description");
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
+transformBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const offsetTop = transformItem.getBoundingClientRect().top + window.scrollY;
+
+  gsap.to(window, {
+    duration: 2,
+    scrollTo: {
+      y: offsetTop,
+      autoKill: false,
+    },
+    ease: "power2.out",
+  });
+});
 const topBtn = document.querySelectorAll(".footer__detail-button");
 topBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {

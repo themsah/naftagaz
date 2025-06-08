@@ -39,13 +39,13 @@ body {
   display: none;
 }
 .icons {
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
 }
 .naftagaz__items {
   display: flex;
   flex-direction: column;
-  height: 2000px;
+  height: 2700px;
   background-color: var(--color);
 }
 header {
@@ -368,24 +368,199 @@ header.hide-header {
 .company-drilling {
   width: 100%;
   height: 400px;
-  gap: 100px;
   margin-top: 300px;
   position: relative;
   background-color: #ab052d;
 }
-.company-drilling h1{
-    position: absolute;
-    top: -120px;
-    font-size: 160px;
-    right: 100px;
-    z-index: 1;
-    color: var(--snow);
+.company-drilling h1 {
+  position: absolute;
+  top: -120px;
+  font-size: 160px;
+  right: 100px;
+  z-index: 1;
+  color: var(--snow);
 }
-.company-drilling_img{
-    width: 70%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
+.company-drilling_img {
+  width: 80%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.company-drilling_icon--btn {
+  background-color: var(--snow);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  color: var(--bg-color);
+  position: absolute;
+  bottom: 80px;
+  left: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+}
+.company-drilling_icon--btn:hover {
+  color: var(--snow);
+}
+.company-drilling_icon--btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transform: scale(0);
+  transition: 0.4s;
+  z-index: -1;
+}
+.company-drilling_icon--btn:hover::before {
+  transform: scale(1);
+}
+.company-drilling_spans {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 120px 170px 0px;
+  border-color: transparent transparent var(--bg-second-color) transparent;
+}
+.company-drilling_span--one {
+  bottom: 0;
+  left: 400px;
+}
+.company-drilling_span--two {
+  top: 0;
+  transform: rotate(180deg);
+  left: 400px;
+}
+.company-drilling_span--three {
+  bottom: 120px;
+  left: 650px;
+  transform: rotate(90deg);
+}
+.company-drilling_span--four {
+  bottom: 120px;
+  left: 850px;
+  transform: rotate(269deg);
+}
+/* company-drilling_description */
+.company-drilling_description {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+.company-drilling_description h2 {
+  width: 500px;
+  top: 100px;
+  left: 200px;
+  color: var(--snow);
+  position: absolute;
+}
+.company-drilling_description p {
+  color: var(--border-color);
+  width: 400px;
+  bottom: 100px;
+  right: 250px;
+  position: absolute;
+}
+/* company-drilling_services */
+.company-drilling_services {
+  width: 100%;
+  position: relative;
+}
+.company-drilling_services--imgs {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+.company-drilling_services--detail {
+  position: absolute;
+  top: 200px;
+  width: 100%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.company-drilling_services--items {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.company-drilling_services--item {
+  width: 35%;
+  height: 100%;
+  background-color: var(--bg-color);
+  position: relative;
+}
+.company-drilling_services--icons {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  color: var(--snow);
+  background-color: var(--bg-second-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.company-drilling_services--img {
+  width: 180px;
+  position: absolute;
+  top: 150px;
+  right: 140px;
+  z-index: 0;
+}
+.company-drilling_services--text {
+  position: absolute;
+  color: var(--snow);
+  bottom: 50px;
+  left: 50px;
+  width: 120px;
+  z-index: 2;
+}
+.company-drilling_services--textHover {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 400px;
+  color: var(--text-color);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.7s;
+  z-index: 1;
+}
+.company-drilling_services--item:hover > .company-drilling_services--textHover {
+  opacity: 1;
+  visibility: visible;
+}
+.company-drilling_services--item:hover > .company-drilling_services--text {
+  color: var(--bg-color);
+}
+.company-drilling_services--item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--snow);
+  transition: 0.6s;
+  z-index: 1;
+}
+.company-drilling_services--item:hover::before {
+  height: 100%;
 }
 /* footer  */
 footer {
@@ -397,6 +572,7 @@ footer {
   padding-block: 60px;
   width: 100%;
   background-color: var(--snow);
+  margin-top: 500px;
 }
 .footer__detail {
   display: flex;
@@ -444,10 +620,6 @@ footer {
 }
 .footer__detail-icon:hover {
   background-color: var(--bg-second-color);
-}
-.icons {
-  width: 15px;
-  height: 15px;
 }
 .footer__detail-list a li {
   color: var(--bg-color);
@@ -500,6 +672,9 @@ footer {
   color: var(--bg-color);
 }
 @media screen and (max-width: 640px) {
+  .naftagaz__items {
+    height: 1800px;
+  }
   header {
     padding-block: 20px;
     padding-inline: 30px;
@@ -712,6 +887,131 @@ footer {
     display: none;
   }
   .header__lists {
+    display: none;
+  }
+  /* Drilling */
+  .company-drilling {
+    width: 100%;
+    height: 450px;
+  }
+  .company-drilling h1 {
+    top: -80px;
+    font-size: 100px;
+    right: 20px;
+  }
+  .company-drilling_img {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    display: block;
+  }
+  .company-drilling_icon--btn {
+    width: 40px;
+    height: 40px;
+    bottom: 50px;
+    left: 40px;
+  }
+  .company-drilling_spans {
+    border-width: 0 70px 120px 0px;
+  }
+  .company-drilling_span--one {
+    bottom: 0;
+    left: 50px;
+  }
+  .company-drilling_span--two {
+    top: 224px;
+    left: 50px;
+  }
+  .company-drilling_span--three {
+    bottom: 40px;
+    left: 180px;
+  }
+  .company-drilling_span--four {
+    bottom: 40px;
+    right: 0;
+  }
+  /* company-drilling_description */
+  .company-drilling_description {
+    height: 500px;
+  }
+  .company-drilling_description h2 {
+    width: 330px;
+    top: 70px;
+    left: 15px;
+  }
+  .company-drilling_description p {
+    width: 330px;
+    bottom: 100px;
+    right: 15px;
+  }
+  /* company-drilling_services */
+  .company-drilling_services--imgs {
+    top: 0px;
+    left: 5px;
+    width: 350px;
+  }
+  .company-drilling_services--detail {
+    top: 0px;
+    width: 100%;
+    height: 500px;
+    flex-direction: row;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* white-space: nowrap; */
+    -webkit-overflow-scrolling: touch;
+  }
+  .company-drilling_services--items {
+    width: fit-content;
+    height: 100%;
+    display: inline-flex;
+    gap: 20px;
+    margin-inline: 20px;
+  }
+  .company-drilling_services--item {
+    width: 300px;
+    height: 85%;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .company-drilling_services--detail::-webkit-scrollbar {
+    height: 8px; 
+  }
+  .company-drilling_services--detail::-webkit-scrollbar-thumb {
+    background-color: var(--color);
+    border-radius: 10px;
+  }
+  .company-drilling_services--detail::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .company-drilling_services--icons {
+    width: 40px;
+    height: 40px;
+    z-index: 0;
+  }
+  .company-drilling_services--img {
+    width: 180px;
+    top: 100px;
+    right: 55px;
+    z-index: 0;
+  }
+  .company-drilling_services--text {
+    position: absolute;
+    width: 120px;
+    bottom: 50px;
+    left: 10px;
+    z-index: 2;
+    color: var(--snow);
+  }
+  .company-drilling_services--item:hover > .company-drilling_services--text {
+    color: var(--snow);
+  }
+  .company-drilling_services--textHover {
+    display: none;
+  }
+  .company-drilling_services--item::before {
     display: none;
   }
   /* footer */
