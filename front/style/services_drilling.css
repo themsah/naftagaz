@@ -562,6 +562,74 @@ header.hide-header {
 .company-drilling_services--item:hover::before {
   height: 100%;
 }
+/* company-drilling_link */
+.company-drilling_link {
+  width: 100%;
+  height: 600px;
+  position: relative;
+}
+.company-drilling_link--img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.company-drilling_link--imgSm{
+  display: none;
+}
+.company-drilling_link--text {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  font-size: 100px;
+  color: var(--snow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.company-drilling_link--icon {
+  transform: rotate(180deg);
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: var(--bg-color);
+  color: var(--snow);
+  position: absolute;
+  top: 230px;
+  right: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+}
+.company-drilling_link--icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--snow);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: 0.4s;
+  transform: scale(0);
+  z-index: -1;
+}
+.company-drilling_link--text:hover ~ .company-drilling_link--icon {
+  color: var(--bg-second-color);
+}
+.company-drilling_link--text:hover ~ .company-drilling_link--icon::before {
+  transform: scale(1);
+}
+.company-drilling_link--icon:hover {
+  color: var(--bg-second-color);
+}
+.company-drilling_link--icon:hover::before {
+  transform: scale(1);
+}
 /* footer  */
 footer {
   display: flex;
@@ -572,7 +640,6 @@ footer {
   padding-block: 60px;
   width: 100%;
   background-color: var(--snow);
-  margin-top: 500px;
 }
 .footer__detail {
   display: flex;
@@ -977,7 +1044,7 @@ footer {
     vertical-align: top;
   }
   .company-drilling_services--detail::-webkit-scrollbar {
-    height: 8px; 
+    height: 8px;
   }
   .company-drilling_services--detail::-webkit-scrollbar-thumb {
     background-color: var(--color);
@@ -1014,10 +1081,47 @@ footer {
   .company-drilling_services--item::before {
     display: none;
   }
+  /* company-drilling_link */
+  .company-drilling_link {
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+  .company-drilling_link--img {
+    display: none;
+  }
+  .company-drilling_link--imgSm{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .company-drilling_link--text {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    height: 50%;
+    font-size: 50px;
+  }
+  .company-drilling_link--icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--bg-second-color);
+    color: var(--snow);
+    top: 140px;
+    right: 140px;
+  }
+  .company-drilling_link--icon::before {
+    display: none;
+  }
+  .company-drilling_link--text:hover ~ .company-drilling_link--icon {
+    color: var(--snow);
+  }
+  .company-drilling_link--icon:hover {
+    color: var(--snow);
+  }
   /* footer */
   footer {
     padding: 20px;
-    margin-top: 350px;
   }
   .footer__detail-one {
     flex-direction: column;
