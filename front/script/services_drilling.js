@@ -1,19 +1,27 @@
-// header
+// Header behavior
 const header = document.querySelector(".naftagaz__items > header");
 let lastScrollY = window.scrollY;
+const companyInfoSection = document.querySelector(".company-Production");
 window.addEventListener("scroll", () => {
+  const companyTop =
+    companyInfoSection.getBoundingClientRect().top + window.scrollY;
+  const companyBottom = companyTop + companyInfoSection.offsetHeight;
   const currentScrollY = window.scrollY;
-  if (currentScrollY === 0) {
-    header.classList.remove("hide-header");
-    header.classList.remove("has-background");
-  } else if (currentScrollY > lastScrollY) {
-    header.classList.add("hide-header");
-    header.classList.remove("has-background");
-  } else {
-    header.classList.remove("hide-header");
-    header.classList.add("has-background");
-  }
 
+  if (currentScrollY >= companyTop && currentScrollY <= companyBottom) {
+    header.classList.add("hide-header");
+  } else {
+    if (currentScrollY === 0) {
+      header.classList.remove("hide-header");
+      header.classList.remove("has-background");
+    } else if (currentScrollY > lastScrollY) {
+      header.classList.add("hide-header");
+      header.classList.remove("has-background");
+    } else {
+      header.classList.remove("hide-header");
+      header.classList.add("has-background");
+    }
+  }
   lastScrollY = currentScrollY;
 });
 const headerBtn = document.querySelectorAll(".header__detail-btns");
@@ -104,6 +112,37 @@ transformBtn.addEventListener("click", (e) => {
     ease: "power2.out",
   });
 });
+// Production-Processes
+if (window.innerWidth >= 768) {
+  const sections = gsap.utils.toArray(".company-production_text");
+  const progressNumber = document.getElementById("progress-number");
+  const circle = document.querySelector(".circle");
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".company-Production",
+      start: "top top",
+      end: () => "+=" + sections.length * window.innerHeight,
+      scrub: true,
+      pin: true,
+    },
+  });
+  tl.to(sections, {
+    yPercent: -100 * (sections.length - 1),
+    ease: "none",
+  });
+  ScrollTrigger.create({
+    trigger: ".company-Production",
+    start: "top top",
+    end: () => "+=" + sections.length * window.innerHeight,
+    onUpdate: (self) => {
+      const index = Math.round(self.progress * (sections.length - 1));
+      progressNumber.textContent = `${index + 1}/${sections.length}`;
+      circle.style.strokeDashoffset =
+        100 - ((index + 1) / sections.length) * 100;
+    },
+  });
+}
+// footer btn
 const topBtn = document.querySelectorAll(".footer__detail-button");
 topBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {

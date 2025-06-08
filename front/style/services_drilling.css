@@ -45,7 +45,7 @@ body {
 .naftagaz__items {
   display: flex;
   flex-direction: column;
-  height: 2700px;
+  height: 3000px;
   background-color: var(--color);
 }
 header {
@@ -562,6 +562,137 @@ header.hide-header {
 .company-drilling_services--item:hover::before {
   height: 100%;
 }
+/* Production-Processes */
+.company-Production {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-second-color);
+  width: 90%;
+  height: 700px;
+  color: var(--snow);
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-400px) translateX(-135px);
+}
+.company-production_detail {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  width: 50%;
+  height: 100vh;
+}
+.company-production_text {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-second-color);
+}
+.company-production_text span {
+  font-size: 40px;
+}
+.company-production_text p {
+  width: 400px;
+}
+.company-production_items {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.company-production_items--img {
+  position: absolute;
+  top: 0px;
+  left: 250px;
+  z-index: 0;
+}
+.company-production_items--title {
+  font-size: 90px;
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  z-index: 10;
+}
+.company-production_prograsBar {
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+}
+.company-production_prograsBar--number {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.progress-circle {
+  width: 80px;
+  height: 80px;
+}
+.circular-chart {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.circle-bg {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 0.1;
+}
+.circle {
+  fill: none;
+  stroke-width: 0.1;
+  stroke: var(--snow);
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition: stroke-dashoffset 0.5s ease;
+}
+/* .company-Production::after {
+  content: "";
+  display: block;
+  height: 3000px;
+} */
+/* company-use */
+.company-use {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+  height: 700px;
+  margin-top: -250px;
+  padding: 0 100px;
+}
+.company-use_detail {
+  display: flex;
+  align-items: start;
+  gap: 40px;
+  width: 100%;
+}
+.company-use_detail--text {
+  width: 50%;
+  border-top: 1px solid var(--border-color);
+  padding: 10px 0;
+}
+.company-use_detail--img {
+}
+.company-use_texts {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.company-use_text {
+  color: var(--bg-color);
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-top: -250px;
+}
+.company-use_text--style {
+  color: var(--bg-second-color);
+}
 /* company-drilling_link */
 .company-drilling_link {
   width: 100%;
@@ -575,7 +706,7 @@ header.hide-header {
   width: 100%;
   height: 100%;
 }
-.company-drilling_link--imgSm{
+.company-drilling_link--imgSm {
   display: none;
 }
 .company-drilling_link--text {
@@ -1081,6 +1212,115 @@ footer {
   .company-drilling_services--item::before {
     display: none;
   }
+  /* Production-Processes */
+  .company-Production {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-second-color);
+    width: 100%;
+    height: 700px;
+    color: var(--snow);
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0px) translateX(0px);
+  }
+  .company-production_detail {
+    flex-direction: row;
+    padding: 0 40px;
+    width: 100%;
+    height: 100vh;
+    gap: 100px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .company-production_detail::-webkit-scrollbar {
+    height: 8px;
+  }
+  .company-production_detail::-webkit-scrollbar-thumb {
+    background-color: var(--bg-second-color);
+    border-radius: 10px;
+  }
+  .company-production_detail::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  .company-production_text {
+    width: 100%;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 0px;
+    border-bottom: none;
+  }
+  .company-production_text span {
+    font-size: 40px;
+  }
+  .company-production_text p {
+    width: 300px;
+  }
+  .company-production_items {
+    width: 50%;
+    height: 100%;
+    position: relative;
+  }
+  .company-production_items--img {
+    width: 150px;
+    top: 40px;
+    left: 30px;
+    z-index: 0;
+  }
+  .company-production_items--title {
+    width: 400px;
+    font-size: 70px;
+    top: 130px;
+    left: -110px;
+    text-align: center;
+  }
+  .company-production_prograsBar {
+    display: none;
+  }
+  /* company-use */
+  .company-use {
+    flex-direction: column;
+    width: 100%;
+    height: 600px;
+    padding: 0 20px;
+    margin-top: 100px;
+    gap: 0;
+  }
+  .company-use_detail {
+    flex-direction: column;
+    align-items: start;
+    gap: 100px;
+    width: 100%;
+  }
+  .company-use_detail--text {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    border-top: none;
+    padding: 10px 0;
+  }
+  .company-use_detail--img {
+    width: 320px;
+  }
+  .company-use_texts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 250px;
+  }
+  .company-use_text {
+    color: var(--bg-color);
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -280px;
+  }
+  .company-use_text--style {
+    color: var(--bg-second-color);
+  }
   /* company-drilling_link */
   .company-drilling_link {
     width: 100%;
@@ -1090,7 +1330,7 @@ footer {
   .company-drilling_link--img {
     display: none;
   }
-  .company-drilling_link--imgSm{
+  .company-drilling_link--imgSm {
     display: block;
     width: 100%;
     height: 100%;
