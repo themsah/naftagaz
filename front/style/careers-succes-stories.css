@@ -23,6 +23,9 @@ body {
   font-family: dana;
   overflow-x: hidden;
 }
+body.modal-open {
+  overflow: hidden; 
+}
 /* scrollbar */
 .scrollbar-custom::-webkit-scrollbar {
   width: 8px;
@@ -518,6 +521,11 @@ header.hide-header {
   opacity: 0;
   visibility: hidden;
   transition: 0.4s;
+  overflow: auto;
+  height: 100vh;
+}
+.modal::-webkit-scrollbar{
+  display: none;
 }
 .modal.active {
   opacity: 1;
@@ -588,7 +596,7 @@ header.hide-header {
 }
 .modal_detail {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 100px;
   width: 100%;
   padding: 40px 60px;
@@ -603,6 +611,11 @@ header.hide-header {
 }
 .modal_detail--textOne {
   color: var(--text-color);
+}
+.modal_detail--descriptions{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 .modal_detail--description {
   width: 400px;

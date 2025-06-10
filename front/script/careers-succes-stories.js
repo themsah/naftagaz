@@ -109,19 +109,24 @@ const modalBtn = document.querySelectorAll(".company-employees_detail");
 const overlay = document.querySelector(".overlay");
 const modal = document.querySelector(".modal");
 const modalCloseBtn = document.querySelector(".modal_btns--leave");
+const body = document.body;
 modalBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     overlay.classList.add("active");
     modal.classList.add("active");
+    body.classList.add("modal-open");
   });
 });
 overlay.addEventListener("click", () => {
   modal.classList.remove("active");
   overlay.classList.remove("active");
+  body.classList.remove("modal-open");
 });
+
 modalCloseBtn.addEventListener("click", () => {
   modal.classList.remove("active");
   overlay.classList.remove("active");
+  body.classList.remove("modal-open");
 });
 // topBtn
 const topBtn = document.querySelectorAll(".footer__detail-button");

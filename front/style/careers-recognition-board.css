@@ -23,6 +23,9 @@ body {
   font-family: dana;
   overflow-x: hidden;
 }
+body.modal-open {
+  overflow: hidden; 
+}
 /* scrollbar */
 .scrollbar-custom::-webkit-scrollbar {
   width: 8px;
@@ -415,8 +418,8 @@ header.hide-header {
   top: -475px;
   width: 600px;
 }
-.transform_btn--sm{
-    display: none;
+.transform_btn--sm {
+  display: none;
 }
 /* company employees */
 .company-employees {
@@ -472,11 +475,16 @@ header.hide-header {
   opacity: 0;
   visibility: hidden;
   transition: 0.4s;
+  overflow: auto;
+  height: 100vh;
 }
-.modal.active{
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
+.modal::-webkit-scrollbar{
+  display: none;
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 .modal_img {
   width: 100%;
@@ -502,8 +510,8 @@ header.hide-header {
 .modal_btns--leave {
   background-color: var(--bg-second-color);
 }
-.modal_btns--leave:hover{
-    color: var(--bg-second-color);
+.modal_btns--leave:hover {
+  color: var(--bg-second-color);
 }
 .modal_btns--leave::before {
   content: "";
@@ -516,8 +524,8 @@ header.hide-header {
   transition: 0.4s;
   z-index: -1;
 }
-.modal_btns--leave:hover::before{
-    height: 100%;
+.modal_btns--leave:hover::before {
+  height: 100%;
 }
 .modal_btns--next {
   background-color: var(--bg-color);
@@ -541,42 +549,42 @@ header.hide-header {
   height: 100%;
 }
 .modal_detail {
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    width: 100%;
-    padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+  padding: 40px 60px;
 }
 .modal_detail--texts {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .modal_detail--name {
-    color: var(--bg-color);
+  color: var(--bg-color);
 }
 .modal_detail--textOne {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 .modal_detail--description {
-    width: 400px;
+  width: 400px;
 }
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: #2b3944b9;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.4s;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #2b3944b9;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
 }
-.overlay.active{
-    opacity: 1;
-    visibility: visible;
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 /* footer  */
 footer {
@@ -976,7 +984,7 @@ footer {
     top: -60px;
     width: 400px;
   }
-  .transform_btn--sm{
+  .transform_btn--sm {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1030,25 +1038,25 @@ footer {
     color: var(--snow);
   }
   /* company employees modal  */
-  .modal{
+  .modal {
     width: 100%;
     height: 100%;
   }
-  .modal_btn{
+  .modal_btn {
     width: 60px;
     height: 60px;
   }
-  .modal_detail{
+  .modal_detail {
     flex-direction: column;
     gap: 40px;
     align-items: start;
     padding: 40px 20px;
   }
-  .modal_detail--textOne{
+  .modal_detail--textOne {
     padding: 20px 0;
     border-bottom: 1px solid var(--border-color);
   }
-  .modal_detail--description{
+  .modal_detail--description {
     width: 100%;
   }
   /* footer */
