@@ -23,6 +23,9 @@ body {
   font-family: dana;
   overflow-x: hidden;
 }
+body.offcanvas-open {
+  overflow: hidden;
+}
 /* scrollbar */
 .scrollbar-custom::-webkit-scrollbar {
   width: 8px;
@@ -693,6 +696,198 @@ header.hide-header {
 .company-use_text--style {
   color: var(--bg-second-color);
 }
+/* services use description */
+.services-use {
+  width: 100%;
+  height: 700px;
+  padding: 70px 100px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.services-useTwo {
+  position: absolute;
+  width: 100%;
+  right: 0;
+}
+.services-use_description {
+  width: 80%;
+  height: 100%;
+  position: relative;
+}
+.services-use_description--number {
+  display: flex;
+  align-items: start;
+  gap: 30px;
+  position: relative;
+}
+.services-use_description--number p {
+  color: var(--bg-color);
+  font-size: 50px;
+}
+.services-use_description--varibleNumber {
+  color: var(--bg-second-color);
+  font-size: 200px;
+  position: absolute;
+  top: -20px;
+  right: 100px;
+}
+.services-use_description--text {
+  width: 40%;
+  position: absolute;
+  top: 250px;
+  font-size: 25px;
+  color: var(--bg-color);
+  z-index: 1;
+}
+.services-use_description--styles {
+  position: absolute;
+  top: -100px;
+  right: 50px;
+  width: 1000px;
+}
+.services-use_detail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 300px;
+  width: 20%;
+}
+.services-use_detail--text {
+  width: 100%;
+  color: var(--bg-color);
+}
+.services-use_detail--btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  z-index: 1;
+}
+.services-use_detail--btns p {
+  color: var(--bg-color);
+}
+.services-use_detail--btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-second-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  color: var(--snow);
+}
+.services-use_detail--btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: var(--bg-color);
+  transform: scale(0);
+  transition: 0.4s;
+  z-index: -1;
+}
+.services-use_detail--btns:hover > .services-use_detail--btn::before {
+  transform: scale(1);
+}
+/* offcanvas */
+.offcanvas {
+  width: 50%;
+  background-color: var(--snow);
+  height: 100vh;
+  overflow: auto;
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  left: -700px;
+  padding: 150px 100px;
+  transition: 0.4s;
+}
+.offcanvas::-webkit-scrollbar {
+  display: none;
+}
+.offcanvas.active {
+  left: 0;
+}
+.offcanvas-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000079;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+.offcanvas-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.offcanvas-btn {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--snow);
+  background-color: var(--bg-second-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+.offcanvas-btn::before {
+  content: "";
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s;
+  z-index: -1;
+}
+.offcanvas-btn:hover::before {
+  height: 100%;
+}
+.offcanvas-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.offcanvas-detail_title {
+  color: var(--bg-color);
+  font-size: 40px;
+}
+.offcanvas-detail_description {
+  display: flex;
+  flex-direction: column;
+}
+.offcanvas-detail_description div:last-child {
+  border-bottom: none;
+}
+.offcanvas-detail_description--style {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 50px 0;
+}
+.offcanvas-detail_description--span {
+  color: var(--bg-second-color);
+  font-size: 40px;
+}
+.offcanvas-detail_description--text {
+}
 /* company-drilling_link */
 .company-drilling_link {
   width: 100%;
@@ -1320,6 +1515,14 @@ footer {
   }
   .company-use_text--style {
     color: var(--bg-second-color);
+  }
+  .offcanvas {
+    width: 100%;
+    padding: 100px 30px;
+  }
+  .offcanvas-btn {
+    width: 60px;
+    height: 60px;
   }
   /* company-drilling_link */
   .company-drilling_link {

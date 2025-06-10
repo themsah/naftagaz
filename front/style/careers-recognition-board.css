@@ -24,7 +24,7 @@ body {
   overflow-x: hidden;
 }
 body.modal-open {
-  overflow: hidden; 
+  overflow: hidden;
 }
 /* scrollbar */
 .scrollbar-custom::-webkit-scrollbar {
@@ -478,7 +478,7 @@ header.hide-header {
   overflow: auto;
   height: 100vh;
 }
-.modal::-webkit-scrollbar{
+.modal::-webkit-scrollbar {
   display: none;
 }
 .modal.active {

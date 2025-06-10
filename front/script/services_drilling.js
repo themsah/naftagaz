@@ -1,14 +1,20 @@
-// Header behavior
 const header = document.querySelector(".naftagaz__items > header");
 let lastScrollY = window.scrollY;
 const companyInfoSection = document.querySelector(".company-Production");
+const servicesUseSection = document.querySelector(".services-use");
 window.addEventListener("scroll", () => {
   const companyTop =
     companyInfoSection.getBoundingClientRect().top + window.scrollY;
   const companyBottom = companyTop + companyInfoSection.offsetHeight;
+  const servicesUseTop =
+    servicesUseSection.getBoundingClientRect().top + window.scrollY;
+  const servicesUseBottom = servicesUseTop + servicesUseSection.offsetHeight;
   const currentScrollY = window.scrollY;
 
-  if (currentScrollY >= companyTop && currentScrollY <= companyBottom) {
+  if (
+    (currentScrollY >= companyTop && currentScrollY <= companyBottom) ||
+    (currentScrollY >= servicesUseTop && currentScrollY <= servicesUseBottom)
+  ) {
     header.classList.add("hide-header");
   } else {
     if (currentScrollY === 0) {
@@ -94,7 +100,6 @@ megaMenuBtn.forEach((btn) => {
     });
   });
 });
-// company-drilling transform
 const transformBtn = document.querySelector(".company-drilling_icon--btn");
 const transformItem = document.querySelector(".company-drilling_description");
 gsap.registerPlugin(ScrollTrigger);
@@ -112,7 +117,6 @@ transformBtn.addEventListener("click", (e) => {
     ease: "power2.out",
   });
 });
-// Production-Processes
 if (window.innerWidth >= 768) {
   const sections = gsap.utils.toArray(".company-production_text");
   const progressNumber = document.getElementById("progress-number");
@@ -142,7 +146,156 @@ if (window.innerWidth >= 768) {
     },
   });
 }
-// footer btn
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+  const serviceScroller = document.querySelector(".services-use");
+  const detailText = document.querySelector(".services-use_detail--text");
+  const number = document.querySelector(
+    ".services-use_description--varibleNumber"
+  );
+  const descriptionText = document.querySelector(
+    ".services-use_description--text"
+  );
+  const descriptionImg = document.querySelector(
+    ".services-use_description--styles"
+  );
+  const serviceScrollerTwo = document.querySelector(".services-useTwo");
+  gsap.set(detailText, { opacity: 1 });
+  gsap.set(number, { opacity: 1 });
+  gsap.set(descriptionText, { opacity: 1 });
+  gsap.set(descriptionImg, { opacity: 1 });
+  gsap.set(serviceScrollerTwo, { opacity: 0 });
+  ScrollTrigger.create({
+    trigger: serviceScroller,
+    start: "top top", 
+    end: "center top", 
+    pin: true,
+    scrub: true, 
+    onEnter: () => {
+      gsap.to(detailText, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(number, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(descriptionText, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(descriptionImg, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    },
+    onLeave: () => {
+      gsap.to(detailText, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(number, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(descriptionText, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(descriptionImg, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(serviceScrollerTwo, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    },
+    onEnterBack: () => {
+      gsap.to(detailText, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(number, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(descriptionText, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(descriptionImg, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+      gsap.to(serviceScrollerTwo, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(detailText, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(number, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(descriptionText, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(descriptionImg, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+      gsap.to(serviceScrollerTwo, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+      });
+    },
+  });
+});
+const offcanvasBtn = document.querySelector(".services-use_detail--btns");
+const offcanvas = document.querySelector(".offcanvas");
+const offcanvasCloseBtn = document.querySelector(".offcanvas-btn");
+const offcanvasOverlay = document.querySelector(".offcanvas-overlay");
+const body = document.body;
+offcanvasBtn.addEventListener("click", () => {
+  offcanvas.classList.add("active");
+  offcanvasOverlay.classList.add("active");
+  body.classList.add("offcanvas-open");
+});
+offcanvasCloseBtn.addEventListener("click", () => {
+  offcanvas.classList.remove("active");
+  offcanvasOverlay.classList.remove("active");
+  body.classList.remove("offcanvas-open");
+});
+offcanvasOverlay.addEventListener("click", () => {
+  offcanvas.classList.remove("active");
+  offcanvasOverlay.classList.remove("active");
+  body.classList.remove("offcanvas-open");
+});
 const topBtn = document.querySelectorAll(".footer__detail-button");
 topBtn.forEach((btn) => {
   btn.addEventListener("click", (e) => {
