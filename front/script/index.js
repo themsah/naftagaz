@@ -472,29 +472,24 @@ document.addEventListener("DOMContentLoaded", () => {
   ScrollTrigger.create({
     trigger: companyLocationSection,
     start: "top top",
-    end: "top top",
+    end: "top center",
     scrub: true,
     onEnter: () => {
       gsap.to(locationText, {
         opacity: 1,
         y: 0,
-        duration: 0.5,
-        delay: 0.2,
         ease: "power2.out",
       });
       gsap.to(locationTextSm, {
         opacity: 1,
         y: 0,
-        duration: 0.5,
-        delay: 0.2,
         ease: "power2.out",
       });
       gsap.to(locationCircle, {
         scale: 1,
-        duration: 0.5,
-        ease: "back.out(1.7)",
+        ease: "back.out",
       });
-      gsap.to(locationImg, { height: 300, duration: 0.5, ease: "power2.out" });
+      gsap.to(locationImg, { height: 300, ease: "power2.out" });
     },
   });
 });

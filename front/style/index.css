@@ -237,12 +237,12 @@ header.hide-header {
 .header__contact-icon:hover::after {
   transform: scale(1);
 }
-.header__lists {
+.menu {
   display: flex;
   align-items: center;
   gap: 40px;
 }
-.header__lists a {
+.menu a {
   width: 172px;
   height: 40px;
   line-height: 40px;
@@ -250,7 +250,7 @@ header.hide-header {
   border-top: 1px solid var(--border-second-color);
   position: relative;
 }
-.header__lists a::before {
+.menu a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -260,10 +260,10 @@ header.hide-header {
   background-color: var(--snow);
   transition: all 0.4s;
 }
-.header__lists a:hover::before {
+.menu a:hover::before {
   width: 100%;
 }
-.menu {
+.menu_item {
   width: 100%;
   height: 100%;
   display: flex;
@@ -271,11 +271,11 @@ header.hide-header {
   justify-content: space-between;
   position: relative;
 }
-.menu:hover .mega-menus {
+.menu_item:hover .sub-menus {
   opacity: 1;
   visibility: visible;
 }
-.mega-menus {
+.sub-menus {
   position: absolute;
   top: 0;
   padding-block: 60px;
@@ -286,7 +286,7 @@ header.hide-header {
   opacity: 0;
   z-index: 10;
 }
-.mega-menu {
+.sub-menu {
   width: 600px;
   height: 250px;
   background-color: var(--snow);
@@ -294,7 +294,7 @@ header.hide-header {
   align-items: center;
   position: relative;
 }
-.mega-menu::before {
+.sub-menu::before {
   content: "";
   position: absolute;
   width: 0;
@@ -306,7 +306,7 @@ header.hide-header {
   transform: rotate(30deg);
   right: -5px;
 }
-.mega-menu__items {
+.sub-menu_items {
   color: black;
   border-left: 1px solid var(--border-color);
   padding: 30px;
@@ -316,10 +316,10 @@ header.hide-header {
   display: flex;
   flex-direction: column;
 }
-.mega-menu__items:last-child {
+.sub-menu_items:last-child {
   border-left: none;
 }
-.mega-menu__icon {
+.sub-menu_icon {
   background-color: var(--bg-second-color);
   color: var(--snow);
   width: 25px;
@@ -333,7 +333,7 @@ header.hide-header {
   justify-content: center;
   z-index: 1;
 }
-.mega-menu__icon::before {
+.sub-menu_icon::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -346,21 +346,21 @@ header.hide-header {
   transform: scale(0);
   z-index: -1;
 }
-.mega-menu__items:hover .mega-menu__icon::before {
+.sub-menu_items:hover .sub-menu_icon::before {
   transform: scale(1);
 }
-.mega-menu__item {
+.sub-menu_item {
   display: flex;
   align-items: end;
   justify-content: space-between;
   height: 90%;
 }
-.mega-menu__img {
+.sub-menu_img {
   opacity: 0;
   visibility: hidden;
   transition: all 0.6s;
 }
-.mega-menu__items:hover .mega-menu__img {
+.sub-menu_items:hover .sub-menu_img {
   opacity: 1;
   visibility: visible;
 }
@@ -1023,8 +1023,8 @@ header.hide-header {
   pointer-events: none;
   z-index: 900;
   /* Control visibility with JavaScript active class for desktop */
-  opacity: 0; 
-  visibility: hidden; 
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 0.4s, visibility 0.4s;
 }
 .modal-img.active {
@@ -1046,10 +1046,9 @@ header.hide-header {
   transition: opacity 0.4s, visibility 0.4s;
 }
 .modal-img-mobile.active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
-
 
 .modal-detail {
   position: absolute;
@@ -1606,7 +1605,7 @@ footer {
   .menuSm__icon-styleActive {
     transform: rotate(180deg);
   }
-  .mega-menuSm {
+  .sub-menuSm {
     width: 100%;
     height: 100px;
     display: flex;
@@ -1615,7 +1614,7 @@ footer {
     position: absolute;
     top: 50px;
   }
-  .mega-menuSm span {
+  .sub-menuSm span {
     border-bottom: 1px solid var(--border-second-color);
     height: 40px;
   }
@@ -1700,7 +1699,7 @@ footer {
   .header__detail-items {
     display: none;
   }
-  .header__lists {
+  .menu {
     display: none;
   }
   /* company_detail */
@@ -1962,7 +1961,7 @@ footer {
     width: 80px;
   }
   /* modal */
-    .modal-img {
+  .modal-img {
     opacity: 0; /* Hide desktop image on mobile */
     visibility: hidden;
   }
@@ -1972,7 +1971,7 @@ footer {
     visibility: visible;
   }
 
-  .modal-detail_text{
+  .modal-detail_text {
     width: 300px;
   }
   .modal-detail {
