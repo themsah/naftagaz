@@ -687,7 +687,7 @@ header.hide-header {
   visibility: hidden;
   transition: 0.4s;
   overflow: hidden;
-  z-index: 50;
+  z-index: 10000;
 }
 
 .modal.active {
@@ -723,7 +723,7 @@ header.hide-header {
   justify-content: center;
   color: var(--snow);
   cursor: pointer;
-  z-index: 1000;
+  z-index: 20000;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s, visibility 0.4s;
@@ -757,7 +757,7 @@ header.hide-header {
   right: 0px;
   width: 550px;
   pointer-events: none;
-  z-index: 900;
+  z-index: 20000;
   /* Control visibility with JavaScript active class for desktop */
   opacity: 0;
   visibility: hidden;
