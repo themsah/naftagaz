@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../style/careers-succes-stories.css" />
+    <link rel="stylesheet" href="../style/all.css" />
+    <link rel="stylesheet" href="../style/output.css" />
     <!-- gSap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <!-- scrollTrigger -->
@@ -14,108 +15,8 @@
     <!-- CustomProps -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomPropsPlugin.min.js"></script>
   </head>
-  <body class="scrollbar-custom">
-    <svg class="svgs">
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="plus"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 4.5v15m7.5-7.5h-15"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="star"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="x-mark"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="paper-airplane"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="x-mark"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="chevron-down"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m19.5 8.25-7.5 7.5-7.5-7.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="chevron-left"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5 8.25 12l7.5-7.5"
-        />
-      </symbol>
-    </svg>
-    <section class="naftagaz__items">
+  <body class="scrollbar-custom page-careers-succes">
+    <section class="careers-succes_items">
       <!-- header -->
       <header>
         <!-- header_detail -->
@@ -124,16 +25,16 @@
           <img
             src="../img/a7abe50b-f058-4f13-8865-f310e11f471d.png"
             alt="naftagaz-icon"
-            class="naftagaz-img"
+            class="index-img"
           />
           <!-- header_detail-item -->
           <div class="header__detail-items">
             <a href="#">+7 495 589 12 00</a>
             <div class="header__detail-btns header__detail-hoverable">
               <p>خط تلفن امنیتی</p>
-              <svg class="icons header__detail-icon">
-                <use href="#chevron-down"></use>
-              </svg>
+              <span class="icons header__detail-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
             </div>
             <div class="header__contact">
               <a href="#">8 800 444 71 09</a>
@@ -150,10 +51,8 @@
                 </p>
                 <div class="header__contact-btn">
                   <p>بیشتر بدانید</p>
-                  <span class="header__contact-icon">
-                    <svg class="icons">
-                      <use href="#chevron-left"></use>
-                    </svg>
+                  <span class="icons header__contact-icon">
+                    <i class="fa-solid fa-chevron-left"></i>
                   </span>
                 </div>
               </div>
@@ -170,18 +69,18 @@
                     alt="naftagaz-icon"
                     class="naftagaz-img"
                   />
-                  <svg class="hamburger-menu__btnClose">
-                    <use href="#x-mark"></use>
-                  </svg>
+                  <span class="hamburger-menu__btnClose">
+                    <i class="fa-solid fa-xmark"></i>
+                  </span>
                 </div>
                 <ul class="hamburger-menu__list">
                   <a href="#">
                     <li class="menuSm">
                       <div class="menuSm__icon">
                         شرکت
-                        <svg class="icons menuSm__iconStyle">
-                          <use href="#chevron-down"></use>
-                        </svg>
+                        <span class="icons menuSm__iconStyle">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
                       </div>
                       <div class="sub-menuSm">
                         <span>درباره شرکت</span>
@@ -193,9 +92,9 @@
                     <li class="menuSm">
                       <div class="menuSm__icon">
                         خدمات
-                        <svg class="icons menuSm__iconStyle">
-                          <use href="#chevron-down"></use>
-                        </svg>
+                        <span class="icons menuSm__iconStyle">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
                       </div>
                       <div class="sub-menuSm">
                         <span>درباره شرکت</span>
@@ -221,9 +120,9 @@
                 <a href="#">+7 495 589 12 00</a>
                 <div class="header__detail-btns header__detail-hoverable">
                   <p>خط تلفن امنیتی</p>
-                  <svg class="icons header__detail-icon">
-                    <use href="#chevron-down"></use>
-                  </svg>
+                  <span class="icons header__detail-icon">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
                 </div>
                 <div class="header__contact">
                   <a href="#">8 800 444 71 09</a>
@@ -240,9 +139,7 @@
                     <div class="header__contact-btn">
                       <p>بیشتر بدانید</p>
                       <span class="header__contact-icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
+                        <i class="fa-solid fa-chevron-left"></i>
                       </span>
                     </div>
                   </div>
@@ -256,95 +153,69 @@
           </div>
         </div>
         <!-- header_lists -->
-        <ul class="menu">
+        <ul class="sub-menuxl">
           <!-- sub-menu -->
-          <a href="#">
-            <li class="menu_item">
+          <li>
+            <a href="#">
               شرکت
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
-              <div class="sub-menus">
-                <div class="sub-menu">
-                  <div class="sub-menu_items">
-                    <p>درباره شرکت</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="sub-menu_items">
-                    <p>توسعه پایدار</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </a>
+              <i class="fa-solid fa-chevron-down"></i>
+              <ul>
+                <li>
+                  <p>درباره شرکت</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                </li>
+                <li>
+                  <p>توسعه پایدار</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                </li>
+              </ul>
+            </a>
+          </li>
           <!-- sub-menu -->
-          <a href="#">
-            <li class="menu_item">
+          <li>
+            <a href="#">
               خدمات
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
-              <div class="sub-menus">
-                <div class="sub-menu">
-                  <div class="sub-menu_items">
-                    <p>حفاری</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                      <img
-                        src="../img/npompmi9o4cb14o5bjdjz9wo1jkuyy3j.png"
-                        alt="drilling"
-                        class="sub-menu_img"
-                      />
-                    </div>
-                  </div>
-                  <div class="sub-menu_items">
-                    <p>خدمات</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                      <img
-                        src="../img/0rih4wvzvwrnv8z7lndul5uqc1nsdeps.jpg"
-                        alt="service"
-                        class="sub-menu_img"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="#">
-            <li>محصولات</li>
-          </a>
-          <a href="#">
-            <li>قیمت ها</li>
-          </a>
-          <a href="#">
-            <li>کاتالوگ</li>
-          </a>
-          <a href="#">
-            <li>مشخصات فنی</li>
-          </a>
+              <i class="fa-solid fa-chevron-down"></i>
+              <ul>
+                <li>
+                  <p>حفاری</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                  <img
+                    src="../img/npompmi9o4cb14o5bjdjz9wo1jkuyy3j.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <p>خدمات</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                  <img
+                    src="../img/0rih4wvzvwrnv8z7lndul5uqc1nsdeps.jpg"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="#">محصولات</a>
+          </li>
+          <li>
+            <a href="#">قیمت ها</a>
+          </li>
+          <li>
+            <a href="#">کاتالوگ</a>
+          </li>
+          <li>
+            <a href="#">مشخصات فنی</a>
+          </li>
         </ul>
       </header>
       <!-- careers -->
@@ -366,94 +237,82 @@
           <img
             src="../img/helmet2-lg.png"
             alt=""
-            class="company-careers_img--two"
+            class="succesCompany-careers_img--two"
           />
         </div>
         <span class="transform_btn--sm">
-          <svg class="icons">
-            <use href="#chevron-down"></use>
-          </svg>
+          <i class="fa-solid fa-chevron-down"></i>
         </span>
       </section>
     </section>
     <!-- Company employees -->
-    <section class="company-employees">
-      <div class="company-employees_detail">
-        <div class="company-employees_detail--text">
+    <section class="succesCompany-employees">
+      <div class="succesCompany-employees_detail">
+        <div class="succesCompany-employees_detail--text">
           <span>
-            <svg>
-              <use href="#star"></use>
-            </svg>
+            <i class="fa-regular fa-star"></i>
           </span>
           <p>عنوان "کارگر محترم نفت" را دریافت کرد.</p>
         </div>
-        <div class="company-employees_detail--imgs">
+        <div class="succesCompany-employees_detail--imgs">
           <img src="../img/abkqwa3u9kemtixkz8jykdqyqijkd85h.png" alt="" />
           <span>
-            <svg class="icons">
-              <use href="#plus"></use>
-            </svg>
+            <i class="fa-regular fa-plus"></i>
           </span>
         </div>
-        <div class="company-employees_detail--title">
+        <div class="succesCompany-employees_detail--title">
           <h1>گریگوری چرویاک</h1>
           <p>نصاب ابزار دقیق</p>
         </div>
       </div>
-      <div class="company-employees_detail">
-        <div class="company-employees_detail--text">
+      <div class="succesCompany-employees_detail">
+        <div class="succesCompany-employees_detail--text">
           <span>
-            <svg class="icons">
-              <use href="#star"></use>
-            </svg>
+            <i class="fa-regular fa-star"></i>
           </span>
           <p>عنوان "کارگر محترم نفت" را دریافت کرد.</p>
         </div>
-        <div class="company-employees_detail--imgs">
+        <div class="succesCompany-employees_detail--imgs">
           <img src="../img/abkqwa3u9kemtixkz8jykdqyqijkd85h.png" alt="" />
           <span>
-            <svg class="icons">
-              <use href="#plus"></use>
-            </svg>
+            <i class="fa-regular fa-plus"></i>
           </span>
         </div>
-        <div class="company-employees_detail--title">
+        <div class="succesCompany-employees_detail--title">
           <h1>گریگوری چرویاک</h1>
           <p>نصاب ابزار دقیق</p>
         </div>
       </div>
     </section>
     <!-- company employees modal -->
-    <section class="modal">
+    <section class="succesModal">
       <img
         src="../img/9vvm4x62pmm6j3rekx8ednyyhhwtfdlq.jpg"
         alt=""
-        class="modal_img"
+        class="succesModal_img"
       />
-      <div class="modal_btns">
-        <span class="modal_btns--leave modal_btn">
-          <svg class="icons">
-            <use href="#x-mark"></use>
-          </svg>
+      <div class="succesModal_btns">
+        <span class="succesModal_btns--leave succesModal_btn">
+          <i class="fa-regular fa-xmark"></i>
         </span>
-        <span class="modal_btns--next modal_btn modal_btn--slide">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+        <span
+          class="succesModal_btns--next succesModal_btn succesModal_btn--slide"
+        >
+          <i class="fa-regular fa-chevron-left"></i>
         </span>
-        <span class="modal_btns--prev modal_btn modal_btn--slide">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+        <span
+          class="succesModal_btns--prev succesModal_btn succesModal_btn--slide"
+        >
+          <i class="fa-regular fa-chevron-left"></i>
         </span>
       </div>
-      <div class="modal_detail">
-        <div class="modal_detail--texts">
-          <h2 class="modal_detail--name">گریگوری چرویاک</h2>
-          <p class="modal_detail--textOne">نصب ابزار دقیق</p>
+      <div class="succesModal_detail">
+        <div class="succesModal_detail--texts">
+          <h2 class="succesModal_detail--name">گریگوری چرویاک</h2>
+          <p class="succesModal_detail--textOne">نصب ابزار دقیق</p>
         </div>
-        <div class="modal_detail--descriptions">
-          <p class="modal_detail--description">
+        <div class="succesModal_detail--descriptions">
+          <p class="succesModal_detail--description">
             گریگوری چرویاک، متخصص ابزار دقیق گریگوری چرویاک اسطوره‌ای از شرکت
             حفاری نفتگاز است. او که ۸۴ سال سن دارد، هنوز در این شرکت مشغول به
             کار است. گریگوری، یک اقتصاددان کشاورزی معتبر از استان چرنیگوف
@@ -461,7 +320,7 @@
             دوستش، که یک حفار بود، او را تشویق کرد که به شهر جدید و در حال توسعه
             نوابرسک نقل مکان کند.
           </p>
-          <p class="modal_detail--description">
+          <p class="succesModal_detail--description">
             گریگوری چرویاک در شغل جدیدش، که در آن به عنوان یک نصاب شروع به کار
             کرد و سپس به سرکارگر و سرپرست ابزار دقیق ارتقا یافت، یک مرکز داده
             برای پردازش صورت‌های حسابداری، حقوق و دستمزد و سوابق سهام با استفاده
@@ -470,7 +329,7 @@
             استفاده از تجهیزات ضبط برای ثبت داده‌ها، شرکت کرد. در سال ۱۹۹۰ به او
             مدال «کارگر پیشکسوت» اهدا شد.
           </p>
-          <p class="modal_detail--description">
+          <p class="succesModal_detail--description">
             در قرن بیست و یکم، گریگوری چرویاک از سمت سرپرست سایت بازنشسته شد و
             تنها وظایف نصب تجهیزات را حفظ کرد. او اکنون مسئول اطمینان از عملکرد
             و نگهداری ابزار دقیق دکل حفاری است. با وجود سنش، مهارت‌های او هنوز
@@ -479,7 +338,7 @@
             که می‌تواند کار کند، زیرا ادعا می‌کند که ماندن در خانه کسل‌کننده
             است.
           </p>
-          <p class="modal_detail--description">
+          <p class="succesModal_detail--description">
             و از آنجایی که او همیشه مایل است تجربیات عظیم شغلی و دانش جامع خود
             را با همکاران جوان‌ترش به اشتراک بگذارد، این یک موقعیت برد-برد است.
             در موارد متعدد، به خاطر عملکرد عالی و سال‌ها فعالیت کاری پربارش،
@@ -487,7 +346,7 @@
             شده است. او در مسابقات مهارت‌های حرفه‌ای به عنوان "بهترین در حرفه"
             انتخاب شد.
           </p>
-          <p class="modal_detail--description">
+          <p class="succesModal_detail--description">
             در سال ۲۰۱۲، او به خاطر سال‌ها کار، از وزارت انرژی فدراسیون روسیه
             تقدیرنامه افتخاری دریافت کرد و در سال ۲۰۱۹ بالاترین نشان برای یک
             کارمند در صنعت نفت و گاز - «کارگر محترم نفت» - را دریافت کرد.
@@ -495,68 +354,58 @@
         </div>
       </div>
     </section>
-    <div class="overlay"></div>
+    <div class="succes_overlay"></div>
     <!-- footer -->
-    <footer>
+    <footer class="services-footer">
       <div class="footer__detail footer__detail-one">
         <div class="footer__detail-contact">
           <div class="footer__detail-items">
             <div class="footer__detail-icons">
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
             </div>
-            <span class="footer__detail-button footer__detail-buttonSm">
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
+            <span class="icons footer__detail-button footer__detail-buttonSm">
+              <i class="fa-solid fa-chevron-down"></i>
             </span>
           </div>
           <p>+7 495 589 12 00</p>
         </div>
         <ul class="footer__detail-list">
-          <a href="#">
-            <li>درباره شرکت</li>
-          </a>
-          <a href="#">
-            <li>توسعه پایدار</li>
-          </a>
-          <a href="#">
-            <li>حفاری</li>
-          </a>
-          <a href="#">
-            <li>خدمات</li>
-          </a>
-          <a href="#">
-            <li>مرکز مطبوعات</li>
-          </a>
-          <a href="#">
-            <li>فرصت‌های شغلی</li>
-          </a>
-          <a href="#">
-            <li>تدارکات</li>
-          </a>
-          <a href="#">
-            <li>مخاطبین</li>
-          </a>
+          <li>
+            <a href="#">درباره شرکت</a>
+          </li>
+          <li>
+            <a href="#">توسعه پایدار</a>
+          </li>
+          <li>
+            <a href="#">حفاری</a>
+          </li>
+          <li>
+            <a href="#">خدمات</a>
+          </li>
+          <li>
+            <a href="#">مرکز مطبوعات</a>
+          </li>
+          <li>
+            <a href="#">فرصت‌های شغلی</a>
+          </li>
+          <li>
+            <a href="#">تدارکات</a>
+          </li>
+          <li>
+            <a href="#">مخاطبین</a>
+          </li>
         </ul>
         <p class="footer__detail-titleSm">© ۲۰۲۵ شرکت سهامی نفتاگاز</p>
-        <span class="footer__detail-button">
-          <svg class="icons">
-            <use href="#chevron-down"></use>
-          </svg>
+        <span class="icons footer__detail-button">
+          <i class="fa-solid fa-chevron-down"></i>
         </span>
       </div>
       <div class="footer__detail footer__detail-second">
@@ -571,6 +420,6 @@
         </p>
       </div>
     </footer>
-    <script src="../script/careers-succes-stories.js"></script>
+    <script src="../script/main.js"></script>
   </body>
 </html>

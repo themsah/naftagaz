@@ -1,5 +1,5 @@
 // header
-const header = document.querySelector(".naftagaz__items > header");
+const header = document.querySelector(".careers-recognition_items > header");
 let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
   const currentScrollY = window.scrollY;
@@ -106,9 +106,9 @@ transformBtn.addEventListener("click", (e) => {
 });
 // modal
 const modalBtn = document.querySelectorAll(".company-employees_detail");
-const overlay = document.querySelector(".overlay");
-const modal = document.querySelector(".modal");
-const modalCloseBtn = document.querySelector(".modal_btns--leave");
+const overlay = document.querySelector(".recognition_overlay");
+const modal = document.querySelector(".recognitionModal");
+const modalCloseBtn = document.querySelector(".recognitionModal_btns--leave");
 const body = document.body; 
 modalBtn.forEach((btn) => {
   btn.addEventListener("click", () => {

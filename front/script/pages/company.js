@@ -1,5 +1,5 @@
 // Header behavior
-const header = document.querySelector(".naftagaz__items > header");
+const header = document.querySelector(".company_items > header");
 let lastScrollY = window.scrollY;
 const companyInfoSection = document.querySelector(".company_information");
 window.addEventListener("scroll", () => {
@@ -95,9 +95,9 @@ megaMenuBtn.forEach((btn) => {
   });
 });
 // company_intro
-const transformBtn = document.querySelector(".naftagaz_video-icon");
-const transformItem = document.querySelector(".naftagaz_success");
-const transformText = document.querySelector(".naftagaz_video-text");
+const transformBtn = document.querySelector(".company_video-icon");
+const transformItem = document.querySelector(".company_success");
+const transformText = document.querySelector(".company_video-text");
 const naftagazIntro = document.querySelector(".company_intro");
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);

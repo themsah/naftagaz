@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../style/all.css" />
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="../style/output.css" />
     <!-- gSap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -15,8 +17,8 @@
     <!-- CustomProps -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomPropsPlugin.min.js"></script>
   </head>
-  <body class="scrollbar-custom page-careers-recognition">
-    <section class="careers-recognition_items">
+  <body class="scrollbar-custom page-images">
+    <section class="images_items">
       <!-- header -->
       <header>
         <!-- header_detail -->
@@ -218,127 +220,172 @@
           </li>
         </ul>
       </header>
-      <!-- careers -->
-      <section class="company-careers">
-        <h1 class="company-careers_title">فرصت‌های شغلی</h1>
-        <div class="company-careers_lists">
-          <span class="company-careers_lists--btn active">هیئت تشخیص</span>
-          <span class="company-careers_lists--btn">داستان های موفقیت</span>
-          <span class="company-careers_lists--btn">جای خالی ها</span>
+      <section class="press-center">
+        <h1>مرکز مطبوعات</h1>
+        <div class="press-center_btns">
+          <span class="press-center_btn">اخبار</span>
+          <span class="press-center_btn">در تصویر</span>
+          <span class="press-center_btn">ویدئوها</span>
+          <span class="press-center_btn active">عکس ها</span>
+          <span class="press-center_btn">ریپورت</span>
         </div>
-        <div class="company-careers_detail">
-          <img
-            src="../img/611i7yej84du06sx2gdlykq9e7425y1r.svg"
-            alt=""
-            class="company-careers_img--one"
-          />
-          <img
-            src="../img/flag-md.png"
-            alt=""
-            class="company-careers_img--two"
-          />
-        </div>
-        <span class="transform_btn--sm">
-          <i class="fa-solid fa-chevron-down"></i>
-        </span>
       </section>
     </section>
-    <!-- Company employees -->
-    <section class="company-employees">
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-    </section>
-    <!-- company employees modal -->
-    <section class="recognitionModal">
-      <img
-        src="../img/3zofdaxcr0fna1zg7pom34698nir86u8.jpg"
-        alt=""
-        class="recognitionModal_img"
-      />
-      <div class="recognitionModal_btns">
-        <span class="recognitionModal_btns--leave recognitionModal_btn">
-          <i class="fa-regular fa-xmark"></i>
-        </span>
-        <span
-          class="recognitionModal_btns--next recognitionModal_btn recognitionModal_btn--slide"
-        >
-          <i class="fa-regular fa-chevron-left"></i>
-        </span>
-        <span
-          class="recognitionModal_btns--prev recognitionModal_btn recognitionModal_btn--slide"
-        >
-          <i class="fa-regular fa-chevron-left"></i>
-        </span>
-      </div>
-      <div class="recognitionModal_detail">
-        <div class="recognitionModal_detail--texts">
-          <h2 class="recognitionModal_detail--name">بالابکوف هارون</h2>
-          <p class="recognitionModal_detail--textOne">
-            رئیس خدمات ایمنی فرآیند
+    <!-- press center items  -->
+    <section
+      class="press-center_items press-center_items--media press-center_images"
+    >
+      <!-- press center input -->
+      <div class="press-center_inputs press-center_inputs--media">
+        <h2 class="press-center_input--title">مشترک شدن در خبرنامه</h2>
+        <div class="press-center_input--styles">
+          <div class="press-center_input--style">
+            <input type="text" class="press-center_input" />
+            <p class="press-center_input--text">ایمیل شما</p>
+            <div class="press-center_input--btn">
+              <p class="press-center_input--btnText">مشترک شوید</p>
+              <span class="press-center_input--btnStyle">
+                <i class="fa-solid fa-chevron-left"></i>
+              </span>
+            </div>
+          </div>
+          <p>
+            با عضویت، شما سیاست حفظ <a href="#">حریم خصوصی</a> و
+            <a href="#">پردازش داده‌های شخصی</a> را می‌پذیرید
           </p>
-          <p class="recognitionModal_detail--textTwo">هیئت افتخار ۲۰۲۳</p>
         </div>
-        <p class="recognitionModal_detail--description">
-          او کار خود را در NaftaGaz در سال ۲۰۱۷ به عنوان متخصص خدمات تولید آغاز
-          کرد. در کار خود، او به طور حرفه‌ای مهارت‌های عملی را در زمینه
-          فعالیت‌های خود به کار می‌گیرد و با تمایل به گسترش مداوم دانش و
-          فرصت‌های جدید متمایز می‌شود.
-        </p>
+        <img src="../img/subscription-xs.png" alt="" />
+      </div>
+      <!-- press center description  -->
+      <div class="press-center_description--styles">
+        <div class="images-category">
+          <p>همه عکس ها</p>
+          <span class="images-category_icon">
+            <i class="fa-solid fa-chevron-down"></i>
+          </span>
+          <span class="img-menu-style"></span>
+          <ul class="img-menu">
+            <li class="img-menu_item">
+              <div class="menu-wrapper">
+                <a href="#" class="img-menu_link">همه عکس ها</a>
+              </div>
+            </li>
+            <li class="img-menu_item">
+              <div class="menu-wrapper">
+                <a href="#" class="img-menu_link">همه عکس ها</a>
+              </div>
+            </li>
+            <li class="img-menu_item">
+              <div class="menu-wrapper">
+                <a href="#" class="img-menu_link">همه عکس ها</a>
+              </div>
+            </li>
+            <li class="img-menu_item">
+              <div class="menu-wrapper">
+                <a href="#" class="img-menu_link">همه عکس ها</a>
+              </div>
+            </li>
+            <li class="img-menu_item">
+              <div class="menu-wrapper">
+                <a href="#" class="img-menu_link">همه عکس ها</a>
+              </div>
+            </li>
+            <li class="img-menu_item">
+              <div class="menu-wrapper">
+                <a href="#" class="img-menu_link">همه عکس ها</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- press center images -->
+        <div class="images-wrapper">
+          <a href="#">
+            <div class="images-items">
+              <div class="images-item">
+                <img
+                  src="../img/imagespage.jpg"
+                  alt=""
+                  class="images-item_img"
+                />
+                <div class="images-item_detail">
+                  <p class="images-item_detail--text">
+                    ۱ ژانویه ۲۰۲۴ میدان یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+                    میدان یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+                  </p>
+                  <div class="images-item_detail--number">
+                    <p>20</p>
+                    <span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="images-year">21 تیر 1403</span>
+              <h1 class="images-title">
+                Yarainerskoye field, Yamal project, November 2016 میدان
+                یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+              </h1>
+            </div>
+          </a>
+          <a href="#">
+            <div class="images-items">
+              <div class="images-item">
+                <img
+                  src="../img/imagespage.jpg"
+                  alt=""
+                  class="images-item_img"
+                />
+                <div class="images-item_detail">
+                  <p class="images-item_detail--text">
+                    ۱ ژانویه ۲۰۲۴ میدان یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+                    میدان یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+                  </p>
+                  <div class="images-item_detail--number">
+                    <p>20</p>
+                    <span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="images-year">21 تیر 1403</span>
+              <h1 class="images-title">
+                Yarainerskoye field, Yamal project, November 2016 میدان
+                یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+              </h1>
+            </div>
+          </a>
+          <a href="#">
+            <div class="images-items">
+              <div class="images-item">
+                <img
+                  src="../img/imagespage.jpg"
+                  alt=""
+                  class="images-item_img"
+                />
+                <div class="images-item_detail">
+                  <p class="images-item_detail--text">
+                    ۱ ژانویه ۲۰۲۴ میدان یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+                    میدان یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+                  </p>
+                  <div class="images-item_detail--number">
+                    <p>20</p>
+                    <span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span class="images-year">21 تیر 1403</span>
+              <h1 class="images-title">
+                Yarainerskoye field, Yamal project, November 2016 میدان
+                یارینرسکویه، پروژه یامال، نوامبر ۲۰۱۶
+              </h1>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
-    <div class="recognition_overlay"></div>
     <!-- footer -->
     <footer class="services-footer">
       <div class="footer__detail footer__detail-one">
@@ -405,5 +452,9 @@
       </div>
     </footer>
     <script src="../script/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 3000, once: true });
+    </script>
   </body>
 </html>

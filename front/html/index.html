@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../style/index.css" />
+    <link rel="stylesheet" href="../style/all.css" />
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style/output.css" />
     <!-- gSap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <!-- scrollTrigger -->
@@ -16,80 +17,8 @@
     <!-- CustomProps -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomPropsPlugin.min.js"></script>
   </head>
-  <body class="scrollbar-custom">
-    <svg class="svgs">
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="x-mark"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="paper-airplane"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="x-mark"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="chevron-down"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m19.5 8.25-7.5 7.5-7.5-7.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="chevron-left"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5 8.25 12l7.5-7.5"
-        />
-      </symbol>
-    </svg>
-    <section class="naftagaz__items">
+  <body class="scrollbar-custom page-index">
+    <section class="index_items">
       <!-- header -->
       <header>
         <!-- header_detail -->
@@ -98,16 +27,16 @@
           <img
             src="../img/a7abe50b-f058-4f13-8865-f310e11f471d.png"
             alt="naftagaz-icon"
-            class="naftagaz-img"
+            class="index-img"
           />
           <!-- header_detail-item -->
           <div class="header__detail-items">
             <a href="#">+7 495 589 12 00</a>
             <div class="header__detail-btns header__detail-hoverable">
               <p>خط تلفن امنیتی</p>
-              <svg class="icons header__detail-icon">
-                <use href="#chevron-down"></use>
-              </svg>
+              <span class="icons header__detail-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
             </div>
             <div class="header__contact">
               <a href="#">8 800 444 71 09</a>
@@ -124,10 +53,8 @@
                 </p>
                 <div class="header__contact-btn">
                   <p>بیشتر بدانید</p>
-                  <span class="header__contact-icon">
-                    <svg class="icons">
-                      <use href="#chevron-left"></use>
-                    </svg>
+                  <span class="icons header__contact-icon">
+                    <i class="fa-solid fa-chevron-left"></i>
                   </span>
                 </div>
               </div>
@@ -144,18 +71,18 @@
                     alt="naftagaz-icon"
                     class="naftagaz-img"
                   />
-                  <svg class="hamburger-menu__btnClose">
-                    <use href="#x-mark"></use>
-                  </svg>
+                  <span class="hamburger-menu__btnClose">
+                    <i class="fa-solid fa-xmark"></i>
+                  </span>
                 </div>
                 <ul class="hamburger-menu__list">
                   <a href="#">
                     <li class="menuSm">
                       <div class="menuSm__icon">
                         شرکت
-                        <svg class="icons menuSm__iconStyle">
-                          <use href="#chevron-down"></use>
-                        </svg>
+                        <span class="icons menuSm__iconStyle">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
                       </div>
                       <div class="sub-menuSm">
                         <span>درباره شرکت</span>
@@ -167,9 +94,9 @@
                     <li class="menuSm">
                       <div class="menuSm__icon">
                         خدمات
-                        <svg class="icons menuSm__iconStyle">
-                          <use href="#chevron-down"></use>
-                        </svg>
+                        <span class="icons menuSm__iconStyle">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
                       </div>
                       <div class="sub-menuSm">
                         <span>درباره شرکت</span>
@@ -195,9 +122,9 @@
                 <a href="#">+7 495 589 12 00</a>
                 <div class="header__detail-btns header__detail-hoverable">
                   <p>خط تلفن امنیتی</p>
-                  <svg class="icons header__detail-icon">
-                    <use href="#chevron-down"></use>
-                  </svg>
+                  <span class="icons header__detail-icon">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
                 </div>
                 <div class="header__contact">
                   <a href="#">8 800 444 71 09</a>
@@ -214,9 +141,7 @@
                     <div class="header__contact-btn">
                       <p>بیشتر بدانید</p>
                       <span class="header__contact-icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
+                        <i class="fa-solid fa-chevron-left"></i>
                       </span>
                     </div>
                   </div>
@@ -230,95 +155,69 @@
           </div>
         </div>
         <!-- header_lists -->
-        <ul class="menu">
+        <ul class="sub-menuxl">
           <!-- sub-menu -->
-          <a href="#">
-            <li class="menu_item">
+          <li>
+            <a href="#">
               شرکت
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
-              <div class="sub-menus">
-                <div class="sub-menu">
-                  <div class="sub-menu_items">
-                    <p>درباره شرکت</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="sub-menu_items">
-                    <p>توسعه پایدار</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </a>
+              <i class="fa-solid fa-chevron-down"></i>
+              <ul>
+                <li>
+                  <p>درباره شرکت</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                </li>
+                <li>
+                  <p>توسعه پایدار</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                </li>
+              </ul>
+            </a>
+          </li>
           <!-- sub-menu -->
-          <a href="#">
-            <li class="menu_item">
+          <li>
+            <a href="#">
               خدمات
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
-              <div class="sub-menus">
-                <div class="sub-menu">
-                  <div class="sub-menu_items">
-                    <p>حفاری</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                      <img
-                        src="../img/npompmi9o4cb14o5bjdjz9wo1jkuyy3j.png"
-                        alt="drilling"
-                        class="sub-menu_img"
-                      />
-                    </div>
-                  </div>
-                  <div class="sub-menu_items">
-                    <p>خدمات</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                      <img
-                        src="../img/0rih4wvzvwrnv8z7lndul5uqc1nsdeps.jpg"
-                        alt="service"
-                        class="sub-menu_img"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="#">
-            <li>محصولات</li>
-          </a>
-          <a href="#">
-            <li>قیمت ها</li>
-          </a>
-          <a href="#">
-            <li>کاتالوگ</li>
-          </a>
-          <a href="#">
-            <li>مشخصات فنی</li>
-          </a>
+              <i class="fa-solid fa-chevron-down"></i>
+              <ul>
+                <li>
+                  <p>حفاری</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                  <img
+                    src="../img/npompmi9o4cb14o5bjdjz9wo1jkuyy3j.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <p>خدمات</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                  <img
+                    src="../img/0rih4wvzvwrnv8z7lndul5uqc1nsdeps.jpg"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="#">محصولات</a>
+          </li>
+          <li>
+            <a href="#">قیمت ها</a>
+          </li>
+          <li>
+            <a href="#">کاتالوگ</a>
+          </li>
+          <li>
+            <a href="#">مشخصات فنی</a>
+          </li>
         </ul>
       </header>
       <!-- header_detail -->
@@ -333,9 +232,7 @@
                 <span>01</span>
               </div>
               <span class="company-detail_style">
-                <svg class="icons">
-                  <use href="#chevron-left"></use>
-                </svg>
+                <i class="fa-solid fa-chevron-left"></i>
               </span>
             </div>
             <div class="company-detail_title">
@@ -344,16 +241,12 @@
                 <span>02</span>
               </div>
               <span class="company-detail_style">
-                <svg class="icons">
-                  <use href="#chevron-left"></use>
-                </svg>
+                <i class="fa-solid fa-chevron-left"></i>
               </span>
             </div>
           </div>
           <span class="company-detail_btn">
-            <svg class="icons">
-              <use href="#chevron-down"></use>
-            </svg>
+            <i class="fa-solid fa-chevron-down"></i>
           </span>
         </div>
         <img src="../img/man-1-lg.png" alt="" class="company-detail_man" />
@@ -361,32 +254,32 @@
       </section>
     </section>
     <!-- company-location -->
-    <section class="company-location">
-      <span class="company-location_title">جغرافیای حضور</span>
-      <div class="company-location_detail">
+    <section class="index-location">
+      <span class="index-location_title">جغرافیای حضور</span>
+      <div class="index-location_detail">
         <p data-aos="fade-up">
           حوزه‌های اصلی فعالیت، حفاری چاه‌های نفت و گاز و چرخه کامل خدمات نصب
           دکل است. این شرکت عمدتاً در مناطق خودمختار یامالو-ننتس و
           خانتی-مانسیسک، سرزمین کراسنویارسک، استان‌های تیومن و تومسک فعالیت
           می‌کند.
         </p>
-        <div class="company-location_detail--text">
+        <div class="index-location_detail--text">
           <span data-aos="fade-up">6800000+</span>
           <p>حجم خاکبرداری، متر</p>
         </div>
       </div>
-      <div class="company-location_text">
+      <div class="index-location_text">
         <p>دفتر مرکزی</p>
         <p>مسکو</p>
       </div>
-      <img src="../img/location-img.jpg" alt="" class="company-location_img" />
+      <img src="../img/location-img.jpg" alt="" class="index-location_img" />
       <svg
         width="1160"
         height="415"
         viewBox="0 0 1160 415"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="company-location_map"
+        class="index-location_map"
       >
         <g id="mapPath">
           <path
@@ -1257,7 +1150,7 @@
         viewBox="0 0 1160 415"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        class="company-location_circle"
+        class="index-location_circle"
       >
         <circle
           class="company-location_circle-one"
@@ -1287,14 +1180,14 @@
           class=""
         ></line>
         <circle
-          class="circle_two"
+          class="index-circle_two"
           cx="320"
           cy="280"
           r="30"
           fill="#BF0632"
         ></circle>
         <circle
-          class="circle_two-dot"
+          class="index-circle_two-dot"
           cx="320"
           cy="280"
           r="30"
@@ -1302,7 +1195,7 @@
           opacity="0.1"
         ></circle>
         <circle
-          class="circle_two-dot"
+          class="index-circle_two-dot"
           cx="320"
           cy="280"
           r="2"
@@ -1329,56 +1222,50 @@
           <use href="#mapPath"></use>
         </mask>
       </svg>
-      <p class="company-location_text-sm">
+      <p class="index-location_text-sm">
         منطقه حضور م نطقه خودمختار یامالو-ننتس، منطقه خودمختار خانتی مانسیسک،
         منطقه کراسنویارسک، تیومن و استان تومسک
       </p>
-      <div class="company-location_btns">
+      <div class="index-location_btns">
         <p>پروژه های ما</p>
-        <span class="company-location_btns--icon">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+        <span class="icons index-location_btns--icon">
+          <i class="fa-solid fa-chevron-left"></i>
         </span>
       </div>
     </section>
     <!-- slider-2 -->
-    <nav class="slidersTwo">
+    <nav class="index-slidersTwo">
       <div class="slider_title">
         <p>پیام مدیریت</p>
       </div>
-      <div class="sliderTwo">
-        <img src="" alt="" class="slider__imgTwo" />
+      <div class="index-sliderTwo">
+        <img src="" alt="" class="index-slider__imgTwo" />
       </div>
-      <p class="slider_textTwo"></p>
-      <div class="slider-detail">
-        <span class="slider-detail_icon"></span>
-        <p class="slider-detail_text">
+      <p class="index-slider_textTwo"></p>
+      <div class="index-slider-detail">
+        <span class="index-slider-detail_icon"></span>
+        <p class="index-slider-detail_text">
           The شرکت بسیار واجد شرایط اجرایی کارکنان با گسترده تجربه در ...
           صنعت<br />
           فراهم کردن «کلید در دست» پروژه توسعه خدمات به به صورت عمودی یکپارچه
           روغن و گاز<br />
           شرکت‌ها تأمین از تدارکات خدمات است همچنین در میان ... شرکت اولویت‌ها
         </p>
-        <div class="slider-detail_btns">
+        <div class="index-slider-detail_btns">
           <p>بیشتر بدانید</p>
-          <span class="slider-detail_btn">
-            <svg class="icons">
-              <use href="#chevron-left"></use>
-            </svg>
+          <span class="icons index-slider-detail_btn">
+            <i class="fa-solid fa-chevron-left"></i>
           </span>
         </div>
       </div>
-      <div class="slider_items">
-        <span class="slider_btn slider_btn-next-two">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+      <div class="index-slider_items">
+        <span class="slider_btn index-slider_btn-next-two">
+          <i class="fa-solid fa-chevron-left"></i>
         </span>
-        <img src="" alt="" class="slider-prograsbar_img" />
-        <span class="slider_prograsbar"></span>
+        <img src="" alt="" class="index-slider-prograsbar_img" />
+        <span class="index-slider_prograsbar"></span>
       </div>
-      <div class="slider-task">ceo</div>
+      <div class="index-slider-task">ceo</div>
     </nav>
     <!-- modal -->
     <!-- <span class="modal-close">
@@ -1466,9 +1353,7 @@
       </div>
     </div> -->
     <span class="modal-close">
-      <svg class="icons">
-        <use href="#x-mark"></use>
-      </svg>
+      <i class="fa-solid fa-xmark"></i>
     </span>
     <img src="../img/ceomodal2.png" alt="" class="modal-img" />
     <div class="modal">
@@ -1560,52 +1445,46 @@
       </div>
     </div>
     <!-- company-drilling -->
-    <section class="company-drilling">
-      <span class="company-drilling__title">حجم حفاری (متر)</span>
-      <span class="company-drilling__text" data-aos="fade-left">6800000+</span>
+    <section class="index-drilling">
+      <span class="index-drilling__title">حجم حفاری (متر)</span>
+      <span class="index-drilling__text" data-aos="fade-left">6800000+</span>
       <img
         src="../img/drillings.png"
         alt="company-drilling"
-        class="company-drilling_img"
+        class="index-drilling_img"
       />
-      <div class="company-drilling_detail">
-        <div class="company-drilling_detail--item">
+      <div class="index-drilling_detail">
+        <div class="index-drilling_detail--item">
           <span>کل سرمایه‌گذاری‌ها (₽)</span>
           <p data-aos="fade-up">13 میلیارد</p>
         </div>
-        <div class="company-drilling_detail--item">
+        <div class="index-drilling_detail--item">
           <span>حجم حفاری سالانه (متر مکعب)</span>
           <p data-aos="fade-up">1000000</p>
         </div>
       </div>
     </section>
     <!-- slider -->
-    <nav class="sliders">
-      <p class="slider_text"></p>
-      <p class="slider_description"></p>
-      <div class="slider"></div>
+    <nav class="index-sliders">
+      <p class="index-slider_text"></p>
+      <p class="index-slider_description"></p>
+      <div class="index-slider"></div>
       <div class="slider_title">
         <p>ماموریت ما</p>
-        <span class="slider_number"></span>
+        <span class="index-slider_number"></span>
       </div>
-      <div class="slider_btns">
-        <span class="slider_btn-next slider_btn">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+      <div class="index-slider_btns">
+        <span class="index-slider_btn-next slider_btn">
+          <i class="fa-solid fa-chevron-left"></i>
         </span>
-        <span class="slider_btn-prev slider_btn">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+        <span class="index-slider_btn-prev slider_btn">
+          <i class="fa-solid fa-chevron-left"></i>
         </span>
       </div>
-      <div class="sliders_learn">
+      <div class="index-sliders_learn">
         <p>بیشتر بدانید</p>
-        <span class="slider_learn--icon">
-          <svg class="icons">
-            <use href="#chevron-left"></use>
-          </svg>
+        <span class="icons index-slider_learn--icon">
+          <i class="fa-solid fa-chevron-left"></i>
         </span>
       </div>
     </nav>
@@ -1628,16 +1507,12 @@
           <span
             class="company-pressCenter_slider--prevBtn company-pressCenter_slider--btn"
           >
-            <svg class="icons">
-              <use href="#chevron-left"></use>
-            </svg>
+            <i class="fa-solid fa-chevron-left"></i>
           </span>
           <span
             class="company-pressCenter_slider--nextBtn company-pressCenter_slider--btn active"
           >
-            <svg class="icons">
-              <use href="#chevron-left"></use>
-            </svg>
+            <i class="fa-solid fa-chevron-left"></i>
           </span>
         </div>
       </div>
@@ -2083,60 +1958,50 @@
           <div class="footer__detail-items">
             <div class="footer__detail-icons">
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
             </div>
-            <span class="footer__detail-button footer__detail-buttonSm">
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
+            <span class="icons footer__detail-button footer__detail-buttonSm">
+              <i class="fa-solid fa-chevron-down"></i>
             </span>
           </div>
           <p>+7 495 589 12 00</p>
         </div>
         <ul class="footer__detail-list">
-          <a href="#">
-            <li>درباره شرکت</li>
-          </a>
-          <a href="#">
-            <li>توسعه پایدار</li>
-          </a>
-          <a href="#">
-            <li>حفاری</li>
-          </a>
-          <a href="#">
-            <li>خدمات</li>
-          </a>
-          <a href="#">
-            <li>مرکز مطبوعات</li>
-          </a>
-          <a href="#">
-            <li>فرصت‌های شغلی</li>
-          </a>
-          <a href="#">
-            <li>تدارکات</li>
-          </a>
-          <a href="#">
-            <li>مخاطبین</li>
-          </a>
+          <li>
+            <a href="#">درباره شرکت</a>
+          </li>
+          <li>
+            <a href="#">توسعه پایدار</a>
+          </li>
+          <li>
+            <a href="#">حفاری</a>
+          </li>
+          <li>
+            <a href="#">خدمات</a>
+          </li>
+          <li>
+            <a href="#">مرکز مطبوعات</a>
+          </li>
+          <li>
+            <a href="#">فرصت‌های شغلی</a>
+          </li>
+          <li>
+            <a href="#">تدارکات</a>
+          </li>
+          <li>
+            <a href="#">مخاطبین</a>
+          </li>
         </ul>
         <p class="footer__detail-titleSm">© ۲۰۲۵ شرکت سهامی نفتاگاز</p>
-        <span class="footer__detail-button">
-          <svg class="icons">
-            <use href="#chevron-down"></use>
-          </svg>
+        <span class="icons footer__detail-button">
+          <i class="fa-solid fa-chevron-down"></i>
         </span>
       </div>
       <div class="footer__detail footer__detail-second">
@@ -2151,7 +2016,7 @@
         </p>
       </div>
     </footer>
-    <script src="../script/index.js" defer></script>
+    <script src="../script/main.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 3000, once: true });

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../style/services_service.css" />
+        <link rel="stylesheet" href="../style/all.css" />
+    <link rel="stylesheet" href="../style/output.css" />
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- gSap -->
@@ -16,95 +17,9 @@
     <!-- CustomProps -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomPropsPlugin.min.js"></script>
   </head>
-  <body class="scrollbar-custom">
-    <svg class="svgs">
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="plus"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 4.5v15m7.5-7.5h-15"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="x-mark"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="paper-airplane"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="x-mark"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M6 18 18 6M6 6l12 12"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="chevron-down"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m19.5 8.25-7.5 7.5-7.5-7.5"
-        />
-      </symbol>
-      <symbol
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        id="chevron-left"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5 8.25 12l7.5-7.5"
-        />
-      </symbol>
-    </svg>
-    <section class="naftagaz__items">
-      <!-- header -->
+  <body class="scrollbar-custom page-services-service">
+    <section class="services-service_items">
+            <!-- header -->
       <header>
         <!-- header_detail -->
         <div class="header__detail">
@@ -112,16 +27,16 @@
           <img
             src="../img/a7abe50b-f058-4f13-8865-f310e11f471d.png"
             alt="naftagaz-icon"
-            class="naftagaz-img"
+            class="index-img"
           />
           <!-- header_detail-item -->
           <div class="header__detail-items">
             <a href="#">+7 495 589 12 00</a>
             <div class="header__detail-btns header__detail-hoverable">
               <p>خط تلفن امنیتی</p>
-              <svg class="icons header__detail-icon">
-                <use href="#chevron-down"></use>
-              </svg>
+              <span class="icons header__detail-icon">
+                <i class="fa-solid fa-chevron-down"></i>
+              </span>
             </div>
             <div class="header__contact">
               <a href="#">8 800 444 71 09</a>
@@ -138,10 +53,8 @@
                 </p>
                 <div class="header__contact-btn">
                   <p>بیشتر بدانید</p>
-                  <span class="header__contact-icon">
-                    <svg class="icons">
-                      <use href="#chevron-left"></use>
-                    </svg>
+                  <span class="icons header__contact-icon">
+                    <i class="fa-solid fa-chevron-left"></i>
                   </span>
                 </div>
               </div>
@@ -158,18 +71,18 @@
                     alt="naftagaz-icon"
                     class="naftagaz-img"
                   />
-                  <svg class="hamburger-menu__btnClose">
-                    <use href="#x-mark"></use>
-                  </svg>
+                  <span class="hamburger-menu__btnClose">
+                    <i class="fa-solid fa-xmark"></i>
+                  </span>
                 </div>
                 <ul class="hamburger-menu__list">
                   <a href="#">
                     <li class="menuSm">
                       <div class="menuSm__icon">
                         شرکت
-                        <svg class="icons menuSm__iconStyle">
-                          <use href="#chevron-down"></use>
-                        </svg>
+                        <span class="icons menuSm__iconStyle">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
                       </div>
                       <div class="sub-menuSm">
                         <span>درباره شرکت</span>
@@ -181,9 +94,9 @@
                     <li class="menuSm">
                       <div class="menuSm__icon">
                         خدمات
-                        <svg class="icons menuSm__iconStyle">
-                          <use href="#chevron-down"></use>
-                        </svg>
+                        <span class="icons menuSm__iconStyle">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
                       </div>
                       <div class="sub-menuSm">
                         <span>درباره شرکت</span>
@@ -209,9 +122,9 @@
                 <a href="#">+7 495 589 12 00</a>
                 <div class="header__detail-btns header__detail-hoverable">
                   <p>خط تلفن امنیتی</p>
-                  <svg class="icons header__detail-icon">
-                    <use href="#chevron-down"></use>
-                  </svg>
+                  <span class="icons header__detail-icon">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
                 </div>
                 <div class="header__contact">
                   <a href="#">8 800 444 71 09</a>
@@ -228,9 +141,7 @@
                     <div class="header__contact-btn">
                       <p>بیشتر بدانید</p>
                       <span class="header__contact-icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
+                        <i class="fa-solid fa-chevron-left"></i>
                       </span>
                     </div>
                   </div>
@@ -244,116 +155,88 @@
           </div>
         </div>
         <!-- header_lists -->
-        <ul class="menu">
+        <ul class="sub-menuxl">
           <!-- sub-menu -->
-          <a href="#">
-            <li class="menu_item">
+          <li>
+            <a href="#">
               شرکت
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
-              <div class="sub-menus">
-                <div class="sub-menu">
-                  <div class="sub-menu_items">
-                    <p>درباره شرکت</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="sub-menu_items">
-                    <p>توسعه پایدار</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </a>
+              <i class="fa-solid fa-chevron-down"></i>
+              <ul>
+                <li>
+                  <p>درباره شرکت</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                </li>
+                <li>
+                  <p>توسعه پایدار</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                </li>
+              </ul>
+            </a>
+          </li>
           <!-- sub-menu -->
-          <a href="#">
-            <li class="menu_item">
+          <li>
+            <a href="#">
               خدمات
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
-              <div class="sub-menus">
-                <div class="sub-menu">
-                  <div class="sub-menu_items">
-                    <p>حفاری</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                      <img
-                        src="../img/npompmi9o4cb14o5bjdjz9wo1jkuyy3j.png"
-                        alt="drilling"
-                        class="sub-menu_img"
-                      />
-                    </div>
-                  </div>
-                  <div class="sub-menu_items">
-                    <p>خدمات</p>
-                    <div class="sub-menu_item">
-                      <span class="sub-menu_icon">
-                        <svg class="icons">
-                          <use href="#chevron-left"></use>
-                        </svg>
-                      </span>
-                      <img
-                        src="../img/0rih4wvzvwrnv8z7lndul5uqc1nsdeps.jpg"
-                        alt="service"
-                        class="sub-menu_img"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </a>
-          <a href="#">
-            <li>محصولات</li>
-          </a>
-          <a href="#">
-            <li>قیمت ها</li>
-          </a>
-          <a href="#">
-            <li>کاتالوگ</li>
-          </a>
-          <a href="#">
-            <li>مشخصات فنی</li>
-          </a>
+              <i class="fa-solid fa-chevron-down"></i>
+              <ul>
+                <li>
+                  <p>حفاری</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                  <img
+                    src="../img/npompmi9o4cb14o5bjdjz9wo1jkuyy3j.png"
+                    alt=""
+                  />
+                </li>
+                <li>
+                  <p>خدمات</p>
+                  <span>
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </span>
+                  <img
+                    src="../img/0rih4wvzvwrnv8z7lndul5uqc1nsdeps.jpg"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </a>
+          </li>
+          <li>
+            <a href="#">محصولات</a>
+          </li>
+          <li>
+            <a href="#">قیمت ها</a>
+          </li>
+          <li>
+            <a href="#">کاتالوگ</a>
+          </li>
+          <li>
+            <a href="#">مشخصات فنی</a>
+          </li>
         </ul>
       </header>
       <!-- Drilling -->
-      <nav class="company-drilling">
+      <nav class="Company-drilling">
         <h1 data-aos="fade-up">خدمات</h1>
         <img
           src="../img/service-logo-lg.jpg"
           alt=""
-          class="company-drilling_img"
+          class="Company-drilling_img"
         />
-        <span class="company-drilling_icon--btn" id="scroll-down-btn">
-          <svg class="icons">
-            <use href="#chevron-down"></use>
-          </svg>
+        <span class="Company-drilling_icon--btn" id="scroll-down-btn">
+          <i class="fa-regular fa-chevron-down"></i>
         </span>
-        <span class="company-drilling_spans company-drilling_span--one"></span>
-        <span class="company-drilling_spans company-drilling_span--two"></span>
+        <span class="Company-drilling_spans Company-drilling_span--one"></span>
+        <span class="Company-drilling_spans Company-drilling_span--two"></span>
         <span
-          class="company-drilling_spans company-drilling_span--three"
+          class="Company-drilling_spans Company-drilling_span--three"
         ></span>
-        <span class="company-drilling_spans company-drilling_span--four"></span>
+        <span class="Company-drilling_spans Company-drilling_span--four"></span>
       </nav>
       <nav class="company-drilling_description">
         <h2>
@@ -361,31 +244,29 @@
           خدمات دکل‌بندی زیر را ارائه می‌دهد:
         </h2>
       </nav>
-      <section class="company-drilling_services">
+      <section class="services-company-drilling_services">
         <img
           src="../img/services.svg"
           alt=""
-          class="company-drilling_services--imgs"
+          class="services-company-drilling_services--imgs"
         />
-        <div class="company-drilling_services--detail">
-          <div class="company-drilling_services--items">
+        <div class="services-company-drilling_services--detail">
+          <div class="services-company-drilling_services--items">
             <div
-              class="company-drilling_services--itemOne company-drilling_services--item"
+              class="services-company-drilling_services--itemOne services-company-drilling_services--item"
             >
-              <p class="company-drilling_services--text">
+              <p class="services-company-drilling_services--text">
                 احداث چاه های اکتشافی و ارزیابی
               </p>
-              <span class="company-drilling_services--icons">
-                <svg class="icons">
-                  <use href="#plus"></use>
-                </svg>
+              <span class="services-company-drilling_services--icons">
+                <i class="fa-regular fa-plus"></i>
               </span>
               <img
                 src="../img/servicesImg2.png"
                 alt=""
-                class="company-drilling_services--img"
+                class="services-company-drilling_services--img"
               />
-              <p class="company-drilling_services--textHover">
+              <p class="services-company-drilling_services--textHover">
                 این شرکت در ساخت چاه‌های اکتشافی و ارزیابی تا عمق ۵۰۰۰ متر،
                 چاه‌های عمودی و جهت‌دار، و همچنین طیف کاملی از فعالیت‌های
                 زمین‌شناسی، از جمله آزمایش سازند، نمونه‌برداری از مغزه و غیره،
@@ -393,77 +274,69 @@
               </p>
             </div>
             <div
-              class="company-drilling_services--itemTwo company-drilling_services--item"
+              class="services-company-drilling_services--itemTwo services-company-drilling_services--item"
             >
-              <p class="company-drilling_services--text">
+              <p class="services-company-drilling_services--text">
                 ساخت چاه های تولید نفت و گاز
               </p>
-              <span class="company-drilling_services--icons">
-                <svg class="icons">
-                  <use href="#plus"></use>
-                </svg>
+              <span class="services-company-drilling_services--icons">
+                <i class="fa-regular fa-plus"></i>
               </span>
               <img
                 src="../img/servicesImg1.png"
                 alt=""
-                class="company-drilling_services--img"
+                class="services-company-drilling_services--img"
               />
-              <p class="company-drilling_services--textHover">
+              <p class="services-company-drilling_services--textHover">
                 ساخت چاه‌های تولید نفت و گاز از هر نوع و هرگونه پیچیدگی.
               </p>
             </div>
           </div>
-          <div class="company-drilling_services--items">
-            <div class="company-drilling_services--item">
-              <p class="company-drilling_services--text">آزمایش چاه</p>
-              <span class="company-drilling_services--icons">
-                <svg class="icons">
-                  <use href="#plus"></use>
-                </svg>
+          <div class="services-company-drilling_services--items">
+            <div class="services-company-drilling_services--item">
+              <p class="services-company-drilling_services--text">آزمایش چاه</p>
+              <span class="services-company-drilling_services--icons">
+                <i class="fa-regular fa-plus"></i>
               </span>
               <img
                 src="../img/servicesImg4.png"
                 alt=""
-                class="company-drilling_services--img"
+                class="services-company-drilling_services--img"
               />
-              <p class="company-drilling_services--textHover">
+              <p class="services-company-drilling_services--textHover">
                 این شرکت از تیم‌های باتجربه‌ای بهره می‌برد که با تجهیزاتی کار
                 می‌کنند که قادر به آزمایش خودکار انواع چاه‌ها، از جمله آزمایش
                 هیدرودینامیکی و نمونه‌برداری از درون چاه هستند.
               </p>
             </div>
-            <div class="company-drilling_services--item">
-              <p class="company-drilling_services--text">نمونه برداری مغزه</p>
-              <span class="company-drilling_services--icons">
-                <svg class="icons">
-                  <use href="#plus"></use>
-                </svg>
+            <div class="services-company-drilling_services--item">
+              <p class="services-company-drilling_services--text">نمونه برداری مغزه</p>
+              <span class="services-company-drilling_services--icons">
+                <i class="fa-regular fa-plus"></i>
               </span>
               <img
                 src="../img/servicesImg3.png"
                 alt=""
-                class="company-drilling_services--img"
+                class="services-company-drilling_services--img"
               />
-              <p class="company-drilling_services--textHover">
+              <p class="services-company-drilling_services--textHover">
                 نمونه‌برداری مغزه به صورت ایزوله و غیر ایزوله ۶۷ میلی‌متری، ۸۰
                 میلی‌متری و ۱۰۰ میلی‌متری از دهانه چاه‌های ارزیابی عمودی و
                 چاه‌های تولید نفت و گاز جهت‌دار؛ نمونه‌برداری مغزه با استفاده از
                 نمونه‌های مغزه‌گیرهای تک مقطعی و چند مقطعی انجام می‌شود.
               </p>
             </div>
-            <div class="company-drilling_services--item">
-              <p class="company-drilling_services--text">نمونه برداری مغزه</p>
-              <span class="company-drilling_services--icons">
-                <svg class="icons">
-                  <use href="#plus"></use>
-                </svg>
+            <div class="services-company-drilling_services--item">
+              <p class="services-company-drilling_services--text">نمونه برداری مغزه</p>
+              <span class="services-company-drilling_services--icons">
+                <i class="fa-regular fa-plus"></i>
               </span>
               <img
                 src="../img/servicesImg3.png"
                 alt=""
-                class="company-drilling_services--img"
+                class="services-company-drilling_services--img"
               />
-              <p class="company-drilling_services--textHover">
+              <p class="services-company-drilling_services--textHover">
                 نمونه‌برداری مغزه به صورت ایزوله و غیر ایزوله ۶۷ میلی‌متری، ۸۰
                 میلی‌متری و ۱۰۰ میلی‌متری از دهانه چاه‌های ارزیابی عمودی و
                 چاه‌های تولید نفت و گاز جهت‌دار؛ نمونه‌برداری مغزه با استفاده از
@@ -475,19 +348,19 @@
       </section>
     </section>
     <!-- Production-Processes -->
-    <section class="company-Production">
-      <div class="company-production_detail" id="production-detail">
-        <div class="company-production_text" id="production-item-1">
-          <span class="item-number">01</span>
+    <section class="servicesCompany-Production">
+      <div class="servicesCompany-production_detail" id="production-detail">
+        <div class="servicesCompany-production_text" id="production-item-1">
+          <span class="servicesItem-number">01</span>
           <p>بسیج دکل‌های حفاری</p>
           <img
             src="../img/ktgfbma35elkuc9jsi1wp2v68iv3w158.jpg"
             alt=""
-            class="company-production_text--img"
+            class="servicesCompany-production_text--img"
           />
         </div>
-        <div class="company-production_text" id="production-item-2">
-          <span class="item-number">02</span>
+        <div class="servicesCompany-production_text" id="production-item-2">
+          <span class="servicesItem-number">02</span>
           <p>
             حمل بار - انواع مختلف تجهیزات، چه استاندارد و چه بزرگ، محموله‌های
             سنگین، فولاد سازه‌ای و ماشین‌آلات ویژه.
@@ -495,11 +368,11 @@
           <img
             src="../img/qwxmpvxmf1ihqgn12xihze2useb6n7gd.jpg"
             alt=""
-            class="company-production_text--img"
+            class="servicesCompany-production_text--img"
           />
         </div>
-        <div class="company-production_text" id="production-item-3">
-          <span class="item-number">03</span>
+        <div class="servicesCompany-production_text" id="production-item-3">
+          <span class="servicesItem-number">03</span>
           <p>
             خدمات ماشین‌آلات ویژه از دسته‌های مختلف، مانند PPU-1600/100، CA-320،
             کامیون‌های کمپرسی، جرثقیل‌های کامیونی با ظرفیت ۲۵ تا ۵۰ تن.
@@ -507,49 +380,49 @@
           <img
             src="../img/2wereqvurqn0oani2xuwtyznjj70smze.jpg"
             alt=""
-            class="company-production_text--img"
+            class="servicesCompany-production_text--img"
           />
         </div>
-        <div class="company-production_text" id="production-item-4">
-          <span class="item-number">04</span>
+        <div class="servicesCompany-production_text" id="production-item-4">
+          <span class="servicesItem-number">04</span>
           <p>ساخت و آماده سازی پدهای چاه برای حفر چاه.</p>
           <img
             src="../img/rd7a9imsqgar0trh3uem6hkp0sguhg8a.jpg"
             alt=""
-            class="company-production_text--img"
+            class="servicesCompany-production_text--img"
           />
         </div>
-        <div class="company-production_text" id="production-item-5">
-          <span class="item-number">05</span>
+        <div class="servicesCompany-production_text" id="production-item-5">
+          <span class="servicesItem-number">05</span>
           <p>ساخت، تعمیر و نگهداری جاده‌های موتوری.</p>
           <img
             src="../img/fjumwbe5121rgj2t606i1u7si8qow3rx.jpg"
             alt=""
-            class="company-production_text--img"
+            class="servicesCompany-production_text--img"
           />
         </div>
       </div>
-      <div class="company-production_items">
+      <div class="servicesCompany-production_items">
         <img
           src="../img/858rs1lz6vkt32mlsqguxmqjy5kus7sd.jpg"
           alt=""
-          class="company-production_items--img"
+          class="servicesCompany-production_items--img"
         />
-        <h1 class="company-production_items--title">
+        <h1 class="servicesCompany-production_items--title">
           پشتیبانی از خدمات حمل و نقل و کارهای مقدماتی برای عملیات حفاری در
           استان‌های نفت و گاز
         </h1>
-        <div class="company-production_prograsBar">
-          <div class="progress-circle">
-            <svg viewBox="0 0 36 36" class="circular-chart">
+        <div class="servicesCompany-production_prograsBar">
+          <div class="servicesProgress-circle">
+            <svg viewBox="0 0 36 36" class="servicesCircular-chart">
               <path
-                class="circle-bg"
+                class="servicesCircle-bg"
                 d="M18 2.0845
                  a 15.9155 15.9155 0 0 1 0 31.831
                  a 15.9155 15.9155 0 0 1 0 -31.831"
               />
               <path
-                class="circle"
+                class="servicesCircle"
                 d="M18 2.0845
                  a 15.9155 15.9155 0 0 1 0 31.831
                  a 15.9155 15.9155 0 0 1 0 -31.831"
@@ -558,7 +431,7 @@
             </svg>
           </div>
           <span
-            class="company-production_prograsBar--number"
+            class="servicesCompany-production_prograsBar--number"
             id="progress-number"
             >1/5</span
           >
@@ -619,85 +492,73 @@
       </div>
     </section>
     <!-- company-drilling-link -->
-    <section class="company-drilling_link">
+    <section class="servicesCompany-drilling_link">
       <img
         src="../img/s7p6p2qyeig7266j548skidi6b6vr4dn.jpg"
         alt=""
-        class="company-drilling_link--img"
+        class="servicesCompany-drilling_link--img"
       />
       <img
         src="../img/3bc66q2myezvzw9h9tmq4chumn5w7dko.jpg"
         alt=""
-        class="company-drilling_link--imgSm"
+        class="servicesCompany-drilling_link--imgSm"
       />
-      <p class="company-drilling_link--text" data-aos="fade-up">خدمات</p>
-      <span class="company-drilling_link--icon">
-        <svg class="icons">
-          <use href="#chevron-left"></use>
-        </svg>
+      <p class="servicesCompany-drilling_link--text" data-aos="fade-up">خدمات</p>
+      <span class="servicesCompany-drilling_link--icon">
+        <i class="fa-regular fa-chevron-left"></i>
       </span>
     </section>
-    <!-- footer -->
-    <footer>
+        <!-- footer -->
+    <footer class="services-footer">
       <div class="footer__detail footer__detail-one">
         <div class="footer__detail-contact">
           <div class="footer__detail-items">
             <div class="footer__detail-icons">
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
               <span class="footer__detail-icon">
-                <svg class="icons">
-                  <use href="#paper-airplane"></use>
-                </svg>
+                <i class="fa-brands fa-telegram"></i>
               </span>
             </div>
-            <span class="footer__detail-button footer__detail-buttonSm">
-              <svg class="icons">
-                <use href="#chevron-down"></use>
-              </svg>
+            <span class="icons footer__detail-button footer__detail-buttonSm">
+              <i class="fa-solid fa-chevron-down"></i>
             </span>
           </div>
           <p>+7 495 589 12 00</p>
         </div>
         <ul class="footer__detail-list">
-          <a href="#">
-            <li>درباره شرکت</li>
-          </a>
-          <a href="#">
-            <li>توسعه پایدار</li>
-          </a>
-          <a href="#">
-            <li>حفاری</li>
-          </a>
-          <a href="#">
-            <li>خدمات</li>
-          </a>
-          <a href="#">
-            <li>مرکز مطبوعات</li>
-          </a>
-          <a href="#">
-            <li>فرصت‌های شغلی</li>
-          </a>
-          <a href="#">
-            <li>تدارکات</li>
-          </a>
-          <a href="#">
-            <li>مخاطبین</li>
-          </a>
+          <li>
+            <a href="#">درباره شرکت</a>
+          </li>
+          <li>
+            <a href="#">توسعه پایدار</a>
+          </li>
+          <li>
+            <a href="#">حفاری</a>
+          </li>
+          <li>
+            <a href="#">خدمات</a>
+          </li>
+          <li>
+            <a href="#">مرکز مطبوعات</a>
+          </li>
+          <li>
+            <a href="#">فرصت‌های شغلی</a>
+          </li>
+          <li>
+            <a href="#">تدارکات</a>
+          </li>
+          <li>
+            <a href="#">مخاطبین</a>
+          </li>
         </ul>
         <p class="footer__detail-titleSm">© ۲۰۲۵ شرکت سهامی نفتاگاز</p>
-        <span class="footer__detail-button">
-          <svg class="icons">
-            <use href="#chevron-down"></use>
-          </svg>
+        <span class="icons footer__detail-button">
+          <i class="fa-solid fa-chevron-down"></i>
         </span>
       </div>
       <div class="footer__detail footer__detail-second">
@@ -712,7 +573,7 @@
         </p>
       </div>
     </footer>
-    <script src="../script/services_service.js"></script>
+    <script src="../script/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({ duration: 3000, once: true });

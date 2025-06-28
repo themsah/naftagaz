@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../style/all.css" />
     <link rel="stylesheet" href="../style/output.css" />
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- gSap -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
     <!-- scrollTrigger -->
@@ -15,8 +17,8 @@
     <!-- CustomProps -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/CustomPropsPlugin.min.js"></script>
   </head>
-  <body class="scrollbar-custom page-careers-recognition">
-    <section class="careers-recognition_items">
+  <body class="scrollbar-custom page-contact">
+    <section class="contact_items">
       <!-- header -->
       <header>
         <!-- header_detail -->
@@ -218,127 +220,73 @@
           </li>
         </ul>
       </header>
-      <!-- careers -->
-      <section class="company-careers">
-        <h1 class="company-careers_title">فرصت‌های شغلی</h1>
-        <div class="company-careers_lists">
-          <span class="company-careers_lists--btn active">هیئت تشخیص</span>
-          <span class="company-careers_lists--btn">داستان های موفقیت</span>
-          <span class="company-careers_lists--btn">جای خالی ها</span>
+      <!-- contact -->
+      <section>
+        <h1>جزئیات مخاطبین</h1>
+        <img src="../img/unnamed(1).png" alt="" />
+        <div class="contact_description">
+          <div class="contact_description--btns">
+            <span class="contact_description--btn active" data-contact="1"
+              >مسکو</span
+            >
+            <span class="contact_description--btn" data-contact="2">اتریش</span>
+          </div>
+          <div class="contact_description--details">
+            <div
+              class="contact_description--detail contact_description--detailOne active"
+            >
+              <div>
+                <p>+7 495 589 12 00</p>
+                <p>5 خیابان قائم</p>
+              </div>
+              <a href="#">info@naftagaz.com</a>
+            </div>
+            <div
+              class="contact_description--detail contact_description--detailTwo"
+            >
+              <div>
+                <p>+8 386 567 12 11</p>
+                <p>8 خیابان قائم</p>
+              </div>
+              <a href="#">info@naftagaz.com</a>
+            </div>
+          </div>
         </div>
-        <div class="company-careers_detail">
-          <img
-            src="../img/611i7yej84du06sx2gdlykq9e7425y1r.svg"
-            alt=""
-            class="company-careers_img--one"
-          />
-          <img
-            src="../img/flag-md.png"
-            alt=""
-            class="company-careers_img--two"
-          />
-        </div>
-        <span class="transform_btn--sm">
-          <i class="fa-solid fa-chevron-down"></i>
-        </span>
       </section>
     </section>
-    <!-- Company employees -->
-    <section class="company-employees">
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
-      <div class="company-employees_detail">
-        <p class="company-employees_text">رئیس خدمات ایمنی فرایند</p>
-        <img
-          src="../img/oern89m85lq4ux4jaldp979orls6kguw.png"
-          alt=""
-          class="company-employees_img"
-        />
-        <span class="company-employees_name">بالابکوف هارون</span>
-      </div>
+    <!-- map start -->
+    <section class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.42326929857614!2d51.525272743927665!3d35.731817883696536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e1d2ff8ecec91%3A0xaad2f5f6074adfff!2sTehran%20Institute%20of%20Technology!5e0!3m2!1sen!2s!4v1730825863559!5m2!1sen!2s"
+        frameborder="0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </section>
-    <!-- company employees modal -->
-    <section class="recognitionModal">
-      <img
-        src="../img/3zofdaxcr0fna1zg7pom34698nir86u8.jpg"
-        alt=""
-        class="recognitionModal_img"
-      />
-      <div class="recognitionModal_btns">
-        <span class="recognitionModal_btns--leave recognitionModal_btn">
-          <i class="fa-regular fa-xmark"></i>
-        </span>
-        <span
-          class="recognitionModal_btns--next recognitionModal_btn recognitionModal_btn--slide"
-        >
-          <i class="fa-regular fa-chevron-left"></i>
-        </span>
-        <span
-          class="recognitionModal_btns--prev recognitionModal_btn recognitionModal_btn--slide"
-        >
-          <i class="fa-regular fa-chevron-left"></i>
-        </span>
-      </div>
-      <div class="recognitionModal_detail">
-        <div class="recognitionModal_detail--texts">
-          <h2 class="recognitionModal_detail--name">بالابکوف هارون</h2>
-          <p class="recognitionModal_detail--textOne">
-            رئیس خدمات ایمنی فرآیند
+    <!-- map end -->
+    <section class="security-hotline">
+      <span class="security-hotline_title">خط تلفن امنیتی</span>
+      <span class="security-hotline_text">88004417109</span>
+      <div class="security-hotline_description">
+        <p class="security-hotline_description--text">رایگان در روسیه</p>
+        <div class="security-hotline_description--detail">
+          <p class="security-hotline_description--detailText">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
+            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت 
           </p>
-          <p class="recognitionModal_detail--textTwo">هیئت افتخار ۲۰۲۳</p>
+          <div class="security-hotline_description--learn">
+            <p>بیشتر بدانید</p>
+            <span>
+              <i class="fa-solid fa-chevron-left"></i>
+            </span>
+          </div>
         </div>
-        <p class="recognitionModal_detail--description">
-          او کار خود را در NaftaGaz در سال ۲۰۱۷ به عنوان متخصص خدمات تولید آغاز
-          کرد. در کار خود، او به طور حرفه‌ای مهارت‌های عملی را در زمینه
-          فعالیت‌های خود به کار می‌گیرد و با تمایل به گسترش مداوم دانش و
-          فرصت‌های جدید متمایز می‌شود.
-        </p>
       </div>
     </section>
-    <div class="recognition_overlay"></div>
     <!-- footer -->
     <footer class="services-footer">
       <div class="footer__detail footer__detail-one">

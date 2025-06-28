@@ -1,41 +1,40 @@
 // header
-const header = document.querySelector(".naftagaz__items > header");
-let lastScrollY = window.scrollY;
+const indexHeader = document.querySelector(".index_items > header");
+let indexLastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
-  if (currentScrollY === 0) {
-    header.classList.remove("hide-header");
-    header.classList.remove("has-background");
-  } else if (currentScrollY > lastScrollY) {
-    header.classList.add("hide-header");
-    header.classList.remove("has-background");
+  const indexCurrentScrollY = window.scrollY;
+  if (indexCurrentScrollY === 0) {
+    indexHeader.classList.remove("hide-header");
+    indexHeader.classList.remove("has-background");
+  } else if (indexCurrentScrollY > indexLastScrollY) {
+    indexHeader.classList.add("hide-header");
+    indexHeader.classList.remove("has-background");
   } else {
-    header.classList.remove("hide-header");
-    header.classList.add("has-background");
+    indexHeader.classList.remove("hide-header");
+    indexHeader.classList.add("has-background");
   }
-
-  lastScrollY = currentScrollY;
+  indexLastScrollY = indexCurrentScrollY;
 });
-// card
+// header background effect
 window.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth <= 768) return;
 
-  const card = document.querySelector(".company-detail");
-  const img = document.querySelector(".company-detail_man");
-  const imgBack = document.querySelector(".company-detail_background");
+  const indexDetail = document.querySelector(".company-detail");
+  const indexMan = document.querySelector(".company-detail_man");
+  const indexBack = document.querySelector(".company-detail_background");
 
-  if (!card || !img || !imgBack) {
+  if (!indexDetail || !indexMan || !indexBack) {
     console.warn("یکی از المنت‌های شرکت پیدا نشد.");
     return;
   }
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
+  indexDetail.addEventListener("mousemove", (e) => {
+    const rect = indexDetail.getBoundingClientRect();
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
     const percentX = (mouseX / rect.width - 0.5) * 2;
     const percentY = (mouseY / rect.height - 0.5) * 2;
 
-    gsap.to(img, {
+    gsap.to(indexMan, {
       duration: 1,
       rotateX: percentY * 4,
       rotateY: percentX * -4,
@@ -44,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
       ease: "power3.out",
     });
 
-    gsap.to(imgBack, {
+    gsap.to(indexBack, {
       duration: 2,
       xPercent: percentX * 1.2,
       yPercent: percentY * 1.2,
@@ -53,14 +52,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  card.addEventListener("mouseleave", () => {
-    gsap.to(img, {
+  indexDetail.addEventListener("mouseleave", () => {
+    gsap.to(indexMan, {
       duration: 1,
       rotateX: 0,
       rotateY: 0,
       ease: "power3.out",
     });
-    gsap.to(imgBack, {
+    gsap.to(indexBack, {
       duration: 1.5,
       x: 0,
       y: 0,
@@ -70,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 const headerBtn = document.querySelectorAll(".header__detail-btns");
 const headerIcon = document.querySelector(".header__detail-icon");
-const headerContacts = document.querySelectorAll(".header__contact"); 
+const headerContacts = document.querySelectorAll(".header__contact");
 const hamburgerMenuBtn = document.querySelector(".hamburger-menu__btn");
 const hamburgerMenuDetail = document.querySelector(".hamburger-menu__detail");
 const hamburgerMenuClose = document.querySelector(".hamburger-menu__btnClose");
@@ -80,7 +79,7 @@ headerBtn.forEach((btn) => {
     event.stopPropagation();
     btn.classList.toggle("header__detail-btnsActive");
     headerIcon.classList.toggle("header__detail-iconActive");
-    btn.classList.toggle("header__detail-hoverable"); 
+    btn.classList.toggle("header__detail-hoverable");
     headerContacts.forEach((item) => {
       item.classList.toggle("header__contactActive");
     });
@@ -90,18 +89,22 @@ document.addEventListener("click", (event) => {
   headerContacts.forEach((contact) => {
     let isClickInsideHeaderContact = contact.contains(event.target);
     let isClickOnHeaderBtn = false;
-    headerBtn.forEach(btn => {
+    headerBtn.forEach((btn) => {
       if (btn.contains(event.target)) {
         isClickOnHeaderBtn = true;
       }
     });
-    if (contact.classList.contains("header__contactActive") && !isClickInsideHeaderContact && !isClickOnHeaderBtn) {
+    if (
+      contact.classList.contains("header__contactActive") &&
+      !isClickInsideHeaderContact &&
+      !isClickOnHeaderBtn
+    ) {
       contact.classList.remove("header__contactActive");
-      headerBtn.forEach(btn => {
+      headerBtn.forEach((btn) => {
         btn.classList.remove("header__detail-btnsActive");
-        btn.classList.add("header__detail-hoverable"); 
+        btn.classList.add("header__detail-hoverable");
       });
-      if (headerIcon) { 
+      if (headerIcon) {
         headerIcon.classList.remove("header__detail-iconActive");
       }
     }
@@ -134,14 +137,15 @@ megaMenuBtn.forEach((btn) => {
     });
   });
 });
-// company_intro
-const transformBtn = document.querySelector(".company-detail_btn");
-const transformItem = document.querySelector(".company-location");
+// index_intro
+const indexTransformBtn = document.querySelector(".company-detail_btn");
+const indexTransformItem = document.querySelector(".index-location");
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
-transformBtn.addEventListener("click", (e) => {
+indexTransformBtn.addEventListener("click", (e) => {
   e.preventDefault();
-  const offsetTop = transformItem.getBoundingClientRect().top + window.scrollY;
+  const offsetTop =
+    indexTransformItem.getBoundingClientRect().top + window.scrollY;
 
   gsap.to(window, {
     duration: 2,
@@ -152,16 +156,18 @@ transformBtn.addEventListener("click", (e) => {
     ease: "power2.out",
   });
 });
-// slider1
-const nextBtn = document.querySelector(".slider_btn-next");
-const prevBtn = document.querySelector(".slider_btn-prev");
-const sliderNumber = document.querySelector(".slider_number");
-const slider = document.querySelector(".slider");
-const sliderText = document.querySelector(".slider_text");
-const sliderDescription = document.querySelector(".slider_description");
+// index-slider1
+const indexNextBtn = document.querySelector(".index-slider_btn-next");
+const indexPrevBtn = document.querySelector(".index-slider_btn-prev");
+const indexSliderNumber = document.querySelector(".index-slider_number");
+const indexSlider = document.querySelector(".index-slider");
+const indexSliderText = document.querySelector(".index-slider_text");
+const indexSliderDescription = document.querySelector(
+  ".index-slider_description"
+);
 let index = 0;
-let sliderImagesElements;
-const sliderDetail = [
+let indexSliderImagesElements;
+const indexSliderDetail = [
   {
     id: 1,
     img: "../img/slider1img.jpg",
@@ -187,52 +193,51 @@ const sliderDetail = [
     des: "سطح بالای شایستگی",
   },
 ];
-const sliderImg = sliderDetail.map((item) => {
+const indexSliderImg = indexSliderDetail.map((item) => {
   return item.img;
 });
 function nextSlide(e) {
   if (e) e.preventDefault();
-  index = (index + 1) % sliderImg.length;
+  index = (index + 1) % indexSliderImg.length;
   updateSlider();
 }
 function prevSlide(e) {
   e.preventDefault();
-  index = (index - 1 + sliderImg.length) % sliderImg.length;
+  index = (index - 1 + indexSliderImg.length) % indexSliderImg.length;
   updateSlider();
 }
 function updateSlider() {
-  sliderNumber.textContent = `${index + 1}/${sliderDetail.length}`;
+  indexSliderNumber.textContent = `${index + 1}/${indexSliderDetail.length}`;
 
-  gsap.to(sliderText, {
+  gsap.to(indexSliderText, {
     opacity: 0,
     y: 20,
     duration: 0.3,
     ease: "power1.out",
     onComplete: () => {
-      sliderText.innerHTML = sliderDetail[index].text;
+      indexSliderText.innerHTML = indexSliderDetail[index].text;
       gsap.fromTo(
-        sliderText,
+        indexSliderText,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.3, ease: "power1.out" }
       );
     },
   });
-  gsap.to(sliderDescription, {
+  gsap.to(indexSliderDescription, {
     opacity: 0,
     y: 20,
     duration: 0.3,
     ease: "power1.out",
     onComplete: () => {
-      sliderDescription.innerHTML = sliderDetail[index].des;
+      indexSliderDescription.innerHTML = indexSliderDetail[index].des;
       gsap.fromTo(
-        sliderDescription,
+        indexSliderDescription,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.3, ease: "power1.out" }
       );
     },
   });
-
-  sliderImagesElements.forEach((img, idx) => {
+  indexSliderImagesElements.forEach((img, idx) => {
     if (idx === index) {
       gsap.to(img, {
         opacity: 1,
@@ -252,31 +257,39 @@ function updateSlider() {
     }
   });
 }
-// slider2
-const sliderTwoContainer = document.querySelector(".slidersTwo");
-const sliderImgTwoElement = sliderTwoContainer.querySelector(".slider__imgTwo");
-const sliderTextTwoElement =
-  sliderTwoContainer.querySelector(".slider_textTwo");
-const sliderDetailTextElement = sliderTwoContainer.querySelector(
-  ".slider-detail_text"
+// index-slider2
+const indexSliderTwoContainer = document.querySelector(".index-slidersTwo");
+const indexSliderImgTwoElement = indexSliderTwoContainer.querySelector(
+  ".index-slider__imgTwo"
 );
-const sliderTaskElement = sliderTwoContainer.querySelector(".slider-task");
-const nextBtnTwo = sliderTwoContainer.querySelector(".slider_btn-next-two");
-const sliderPrograsbarImg = sliderTwoContainer.querySelector(
-  ".slider-prograsbar_img"
+const indexSliderTextTwoElement = indexSliderTwoContainer.querySelector(
+  ".index-slider_textTwo"
 );
-const sliderPrograsbar = sliderTwoContainer.querySelector(".slider_prograsbar");
+const indexSliderDetailTextElement = indexSliderTwoContainer.querySelector(
+  ".index-slider-detail_text"
+);
+const indexSliderTaskElement =
+  indexSliderTwoContainer.querySelector(".index-slider-task");
+const indexNextBtnTwo = indexSliderTwoContainer.querySelector(
+  ".index-slider_btn-next-two"
+);
+const indexSliderPrograsbarImg = indexSliderTwoContainer.querySelector(
+  ".index-slider-prograsbar_img"
+);
+const indexSliderPrograsbar = indexSliderTwoContainer.querySelector(
+  ".index-slider_prograsbar"
+);
 let indexTwo = 0;
 let progressBarTween;
 const progressDuration = 5;
-const sliderTwoDetail = [
+const indexSliderTwoDetail = [
   {
     id: 1,
     img: "../img/twoman.jpg",
     text: "تورال کریموف",
     detail:
       "The شرکت بسیار واجد شرایط اجرایی کارکنان با گسترده تجربه در ... صنعت<br />فراهم کردن «کلید در دست» پروژه توسعه خدمات به به صورت عمودی یکپارچه روغن و گاز<br />شرکت‌ها تأمین از تدارکات خدمات است همچنین در میان ... شرکت اولویت‌ها",
-    btnImg: "../img/twoman.jpg", 
+    btnImg: "../img/twoman.jpg",
     task: "رئیس هیئت مدیره",
   },
   {
@@ -285,52 +298,16 @@ const sliderTwoDetail = [
     text: "نیکولای گریشانکوف",
     detail:
       "The شرکت بسیار واجد شرایط اجرایی کارکنان با تجربه عمیق در زمینه پروژه‌های بزرگ صنعتی.<br />تمرکز بر راه‌حل‌های نوآورانه و پایدار برای توسعه صنعت نفت و گاز.<br />ارائه خدمات کامل از طراحی تا اجرا، با رعایت بالاترین استانداردهای ایمنی و کیفیت.",
-    btnImg: "../img/oneman.jpg", 
+    btnImg: "../img/oneman.jpg",
     task: "مدیرعامل",
   },
 ];
-const modalBtn = document.querySelector(".slider-detail_btns");
-const modal = document.querySelector(".modal");
-const modalClose = document.querySelector(".modal-close");
-const modalImg = document.querySelector(".modal-img");
-const modalImgMobile = document.querySelector(".modal-img-mobile"); 
-const modalDetail = document.querySelector(".modal-detail");
-const modalOverlay = document.querySelector(".modal-overlay");
-modalBtn.addEventListener("click", () => {
-  modal.classList.add("active");
-  modalClose.classList.add("active");
-  if (window.innerWidth <= 640) {
-    modalImg.classList.remove("active");
-    modalImgMobile.classList.add("active"); 
-  } else {
-    modalImg.classList.add("active");
-    modalImgMobile.classList.remove("active"); 
-  }
-  modalOverlay.scrollTop = 0;
-});
-modalClose.addEventListener("click", () => {
-  modal.classList.remove("active");
-  modalClose.classList.remove("active");
-  modalImg.classList.remove("active");
-  modalImgMobile.classList.remove("active"); 
-});
-window.addEventListener("resize", () => {
-  if (modal.classList.contains("active")) {
-    if (window.innerWidth <= 640) {
-      modalImg.classList.remove("active");
-      modalImgMobile.classList.add("active"); 
-    } else {
-      modalImg.classList.add("active");
-      modalImgMobile.classList.remove("active"); 
-    }
-  }
-});
 function startProgressBarAnimation() {
   if (progressBarTween) {
     progressBarTween.kill();
   }
-  gsap.set(sliderPrograsbar, { "--after-width": "0%" });
-  progressBarTween = gsap.to(sliderPrograsbar, {
+  gsap.set(indexSliderPrograsbar, { "--after-width": "0%" });
+  progressBarTween = gsap.to(indexSliderPrograsbar, {
     "--after-width": "100%",
     duration: progressDuration,
     ease: "none",
@@ -338,16 +315,16 @@ function startProgressBarAnimation() {
   });
 }
 function updateSliderTwo() {
-  const currentSlide = sliderTwoDetail[indexTwo];
-  const nextSlideData =
-    sliderTwoDetail[(indexTwo + 1) % sliderTwoDetail.length];
-  gsap.to(sliderImgTwoElement, {
+  const indexCurrentSlide = indexSliderTwoDetail[indexTwo];
+  const indexNextSlideData =
+    indexSliderTwoDetail[(indexTwo + 1) % indexSliderTwoDetail.length];
+  gsap.to(indexSliderImgTwoElement, {
     opacity: 0,
     duration: 0.5,
     ease: "power2.out",
     onComplete: () => {
-      sliderImgTwoElement.src = currentSlide.img;
-      gsap.to(sliderImgTwoElement, {
+      indexSliderImgTwoElement.src = indexCurrentSlide.img;
+      gsap.to(indexSliderImgTwoElement, {
         opacity: 1,
         duration: 0.8,
         ease: "power2.inOut",
@@ -355,79 +332,79 @@ function updateSliderTwo() {
     },
   });
 
-  gsap.to(sliderTextTwoElement, {
+  gsap.to(indexSliderTextTwoElement, {
     opacity: 0,
     y: 20,
     duration: 0.3,
     ease: "power1.out",
     onComplete: () => {
-      sliderTextTwoElement.innerHTML = currentSlide.text;
+      indexSliderTextTwoElement.innerHTML = indexCurrentSlide.text;
       gsap.fromTo(
-        sliderTextTwoElement,
+        indexSliderTextTwoElement,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.3, ease: "power1.out" }
       );
     },
   });
-  gsap.to(sliderDetailTextElement, {
+  gsap.to(indexSliderDetailTextElement, {
     opacity: 0,
     y: 20,
     duration: 0.3,
     ease: "power1.out",
     onComplete: () => {
-      sliderDetailTextElement.innerHTML = currentSlide.detail;
+      indexSliderDetailTextElement.innerHTML = indexCurrentSlide.detail;
       gsap.fromTo(
-        sliderDetailTextElement,
+        indexSliderDetailTextElement,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.3, ease: "power1.out" }
       );
     },
   });
-  gsap.to(sliderTaskElement, {
+  gsap.to(indexSliderTaskElement, {
     opacity: 0,
     y: 20,
     duration: 0.3,
     ease: "power1.out",
     onComplete: () => {
-      sliderTaskElement.innerHTML = currentSlide.task;
+      indexSliderTaskElement.innerHTML = indexCurrentSlide.task;
       gsap.fromTo(
-        sliderTaskElement,
+        indexSliderTaskElement,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.3, ease: "power1.out" }
       );
     },
   });
 
-  sliderPrograsbarImg.src = nextSlideData.btnImg;
+  indexSliderPrograsbarImg.src = indexNextSlideData.btnImg;
   startProgressBarAnimation();
 }
 function nextSlideTwo(e) {
   if (e) e.preventDefault();
-  indexTwo = (indexTwo + 1) % sliderTwoDetail.length;
+  indexTwo = (indexTwo + 1) % indexSliderTwoDetail.length;
   updateSliderTwo();
 }
-nextBtnTwo.addEventListener("click", (e) => {
+indexNextBtnTwo.addEventListener("click", (e) => {
   nextSlideTwo(e);
   if (progressBarTween) {
     progressBarTween.restart();
   }
 });
 window.addEventListener("DOMContentLoaded", () => {
-  sliderImg.forEach((item) => {
+  indexSliderImg.forEach((item) => {
     const el = document.createElement("img");
     el.classList.add("slider_img");
     el.src = item;
-    slider.appendChild(el);
+    indexSlider.appendChild(el);
   });
-  sliderImagesElements = document.querySelectorAll(".slider_img");
+  indexSliderImagesElements = document.querySelectorAll(".slider_img");
   updateSlider();
   updateSliderTwo();
 });
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
+indexNextBtn.addEventListener("click", nextSlide);
+indexPrevBtn.addEventListener("click", prevSlide);
 // card
-const card = document.querySelector(".company-drilling");
-const img = document.querySelector(".company-drilling_img");
+const card = document.querySelector(".index-drilling");
+const img = document.querySelector(".index-drilling_img");
 card.addEventListener("mousemove", (e) => {
   const cardRect = card.getBoundingClientRect();
   const cardW = cardRect.width;
@@ -443,26 +420,15 @@ card.addEventListener("mousemove", (e) => {
 card.addEventListener("mouseleave", (e) => {
   img.style.transform = `perspective(400px) rotateX(0deg) rotateY(0deg)`;
 });
-const topBtn = document.querySelectorAll(".footer__detail-button");
-topBtn.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
-  });
-});
 // Location Scroll Animation
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
-  const companyLocationSection = document.querySelector(".company-location");
-  const locationH2 = document.querySelector(".company-location_h2");
-  const locationText = document.querySelector(".company-location_text");
-  const locationCircle = document.querySelector(".company-location_circle");
-  const locationImg = document.querySelector(".company-location_img");
-  const locationTextSm = document.querySelector(".company-location_text-sm");
+  const companyLocationSection = document.querySelector(".index-location");
+  const locationH2 = document.querySelector(".index-location_h2");
+  const locationText = document.querySelector(".index-location_text");
+  const locationCircle = document.querySelector(".index-location_circle");
+  const locationImg = document.querySelector(".index-location_img");
+  const locationTextSm = document.querySelector(".index-location_text-sm");
   gsap.set(locationH2, { opacity: 0, y: 50 });
   gsap.set(locationText, { opacity: 0, y: 50 });
   gsap.set(locationTextSm, { opacity: 0, y: 50 });
@@ -498,9 +464,13 @@ let currentTranslateX = 0;
 let dynamicStep = 0;
 let currentMaxTranslateX = 0;
 function calculateAndApplySliderTransforms() {
-  const activeSliderElement = document.querySelector(".company-pressCenter_detail[style*='display: flex']");
+  const activeSliderElement = document.querySelector(
+    ".company-pressCenter_detail[style*='display: flex']"
+  );
   if (!activeSliderElement) return;
-  const sliderItems = activeSliderElement.querySelectorAll(".company-pressCenter_detail--items");
+  const sliderItems = activeSliderElement.querySelectorAll(
+    ".company-pressCenter_detail--items"
+  );
   if (sliderItems.length === 0) {
     dynamicStep = 0;
     currentMaxTranslateX = 0;
@@ -512,12 +482,14 @@ function calculateAndApplySliderTransforms() {
   const itemWidth = firstItem.offsetWidth;
   const itemGap = 30;
   dynamicStep = itemWidth + itemGap;
-  const totalContentWidth = (sliderItems.length * itemWidth) + ((sliderItems.length - 1) * itemGap);
+  const totalContentWidth =
+    sliderItems.length * itemWidth + (sliderItems.length - 1) * itemGap;
   const clippingArea = document.querySelector(".company-PressCenter");
   const clippingAreaStyle = window.getComputedStyle(clippingArea);
   const clippingPaddingLeft = parseFloat(clippingAreaStyle.paddingLeft || 0);
   const clippingPaddingRight = parseFloat(clippingAreaStyle.paddingRight || 0);
-  const visibleClippingWidth = clippingArea.offsetWidth - clippingPaddingLeft - clippingPaddingRight;
+  const visibleClippingWidth =
+    clippingArea.offsetWidth - clippingPaddingLeft - clippingPaddingRight;
 
   currentMaxTranslateX = totalContentWidth - visibleClippingWidth;
 
@@ -532,7 +504,7 @@ function calculateAndApplySliderTransforms() {
   }
 
   activeSliderElement.style.transform = `translateX(${currentTranslateX}px)`;
-  
+
   updateButtonStates();
 }
 function updateButtonStates() {
@@ -542,7 +514,10 @@ function updateButtonStates() {
     pressPrevBtn.classList.add("active");
   }
   const epsilon = 1;
-  if (currentMaxTranslateX === 0 || currentTranslateX >= currentMaxTranslateX - epsilon) {
+  if (
+    currentMaxTranslateX === 0 ||
+    currentTranslateX >= currentMaxTranslateX - epsilon
+  ) {
     preesNextBtn.classList.remove("active");
   } else {
     preesNextBtn.classList.add("active");
@@ -567,10 +542,10 @@ sliderThreeBtn.forEach((item) => {
     if (targetSlider) {
       targetSlider.style.opacity = "1";
       targetSlider.style.display = "flex";
-      
-      currentTranslateX = 0; 
-      
-      calculateAndApplySliderTransforms(); 
+
+      currentTranslateX = 0;
+
+      calculateAndApplySliderTransforms();
     }
   });
 });
@@ -589,19 +564,21 @@ pressPrevBtn.addEventListener("click", () => {
   calculateAndApplySliderTransforms();
 });
 document.addEventListener("DOMContentLoaded", () => {
-  const initiallyActiveButton = document.querySelector(".company-pressCenter_btn--style.active");
+  const initiallyActiveButton = document.querySelector(
+    ".company-pressCenter_btn--style.active"
+  );
   if (initiallyActiveButton) {
     const defaultSliderId = initiallyActiveButton.dataset.show;
     const defaultSliderElement = document.getElementById(defaultSliderId);
-    if(defaultSliderElement) {
+    if (defaultSliderElement) {
       defaultSliderElement.style.opacity = "1";
       defaultSliderElement.style.display = "flex";
       currentTranslateX = 0;
       calculateAndApplySliderTransforms();
     }
   } else {
-    const defaultSliderElement = document.getElementById('news');
-    if(defaultSliderElement) {
+    const defaultSliderElement = document.getElementById("news");
+    if (defaultSliderElement) {
       defaultSliderElement.style.opacity = "1";
       defaultSliderElement.style.display = "flex";
       currentTranslateX = 0;
@@ -609,4 +586,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   window.addEventListener("resize", calculateAndApplySliderTransforms);
+});
+// modal
+const modalBtn = document.querySelector(".index-slider-detail_btns");
+const modal = document.querySelector(".modal");
+const modalClose = document.querySelector(".modal-close");
+const modalImg = document.querySelector(".modal-img");
+const modalImgMobile = document.querySelector(".modal-img-mobile");
+const modalDetail = document.querySelector(".modal-detail");
+const modalOverlay = document.querySelector(".modal-overlay");
+modalBtn.addEventListener("click", () => {
+  modal.classList.add("active");
+  modalClose.classList.add("active");
+  if (window.innerWidth <= 640) {
+    modalImg.classList.remove("active");
+    modalImgMobile.classList.add("active");
+  } else {
+    modalImg.classList.add("active");
+    modalImgMobile.classList.remove("active");
+  }
+  modalOverlay.scrollTop = 0;
+});
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("active");
+  modalClose.classList.remove("active");
+  modalImg.classList.remove("active");
+  modalImgMobile.classList.remove("active");
+});
+window.addEventListener("resize", () => {
+  if (modal.classList.contains("active")) {
+    if (window.innerWidth <= 640) {
+      modalImg.classList.remove("active");
+      modalImgMobile.classList.add("active");
+    } else {
+      modalImg.classList.add("active");
+      modalImgMobile.classList.remove("active");
+    }
+  }
+});
+// footer btn
+const topBtn = document.querySelectorAll(".footer__detail-button");
+topBtn.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  });
 });

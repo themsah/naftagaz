@@ -1,7 +1,7 @@
 // Header behavior
-const header = document.querySelector(".naftagaz__items > header");
+const header = document.querySelector(".services-service_items > header");
 let lastScrollY = window.scrollY;
-const companyInfoSection = document.querySelector(".company-Production");
+const companyInfoSection = document.querySelector(".servicesCompany-Production");
 window.addEventListener("scroll", () => {
   const companyTop =
     companyInfoSection.getBoundingClientRect().top + window.scrollY;
@@ -95,7 +95,7 @@ megaMenuBtn.forEach((btn) => {
   });
 });
 // company-drilling transform
-const transformBtn = document.querySelector(".company-drilling_icon--btn");
+const transformBtn = document.querySelector(".Company-drilling_icon--btn");
 const transformItem = document.querySelector(".company-drilling_description");
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
@@ -114,12 +114,12 @@ transformBtn.addEventListener("click", (e) => {
 });
 // Production-Processes
 if (window.innerWidth >= 768) {
-  const sections = gsap.utils.toArray(".company-production_text");
+  const sections = gsap.utils.toArray(".servicesCompany-production_text");
   const progressNumber = document.getElementById("progress-number");
-  const circle = document.querySelector(".circle");
+  const circle = document.querySelector(".servicesCircle");
   let tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".company-Production",
+      trigger: ".servicesCompany-Production",
       start: "top top",
       end: () => "+=" + sections.length * window.innerHeight,
       scrub: true,
@@ -131,7 +131,7 @@ if (window.innerWidth >= 768) {
     ease: "none",
   });
   ScrollTrigger.create({
-    trigger: ".company-Production",
+    trigger: ".servicesCompany-Production",
     start: "top top",
     end: () => "+=" + sections.length * window.innerHeight,
     onUpdate: (self) => {

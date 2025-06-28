@@ -1,4 +1,4 @@
-const header = document.querySelector(".naftagaz__items > header");
+const header = document.querySelector(".services-drilling_items > header");
 let lastScrollY = window.scrollY;
 const companyInfoSection = document.querySelector(".company-Production");
 const servicesUseSection = document.querySelector(".services-use");
@@ -100,7 +100,7 @@ megaMenuBtn.forEach((btn) => {
     });
   });
 });
-const transformBtn = document.querySelector(".company-drilling_icon--btn");
+const transformBtn = document.querySelector(".Company-drilling_icon--btn");
 const transformItem = document.querySelector(".company-drilling_description");
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(ScrollToPlugin);
