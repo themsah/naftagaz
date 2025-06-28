@@ -4608,6 +4608,9 @@ footer {
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.514);
 }
+.images-item_detail--numberSM {
+  display: none;
+}
 .images-item_detail--number span i {
   font-size: 10px;
 }
@@ -4653,7 +4656,7 @@ footer {
   visibility: hidden;
   transition: 0.2s;
 }
-.img-menu.active{
+.img-menu.active {
   opacity: 1;
   visibility: visible;
 }
@@ -4661,7 +4664,7 @@ footer {
   position: relative;
   z-index: 1;
 }
-.img-menu_item::after{
+.img-menu_item::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -4672,10 +4675,10 @@ footer {
   z-index: -1;
   transition: 0.3s;
 }
-.img-menu_item:hover::before{
+.img-menu_item:hover::before {
   height: 100%;
 }
-.menu-wrapper{
+.menu-wrapper {
   padding: 0 20px;
 }
 .img-menu_link {
@@ -4702,14 +4705,102 @@ footer {
   z-index: 10;
   opacity: 0;
 }
-.images-category_icon{
+.images-category_icon {
   transition: 0.4s;
 }
-.images-category_icon.active{
+.images-category_icon.active {
   transform: rotate(180deg);
 }
-.img-menu-style.active{
+.img-menu-style.active {
   opacity: 1;
+}
+.images-item_detailSM {
+  display: none;
+}
+/* single page css code */
+.single {
+  margin-top: 220px;
+  padding: 0 60px;
+}
+.single-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.single-link_wrapper{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 20px 0;
+}
+.single-link p{
+  color: var(--bg-color);
+}
+.single-link span{
+  background-color: var(--bg-color);
+  color: var(--snow);
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.single-link span i{
+  font-size: 10px;
+}
+.single-details {
+  display: flex;
+  align-items: start;
+  gap: 100px;
+  padding: 60px 0;
+  position: sticky;
+}
+.single-detail {
+  width: 50%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 60px;
+  position: sticky;
+}
+.single-title {
+  color: var(--bg-color);
+  font-size: 30px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 60px;
+}
+.single-year{
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+.single-year span{
+  color: var(--bg-second-color);
+  font-size: 105px;
+  margin-top: -20px;
+}
+.single-year_sm {
+  display: none;
+}
+.single-description {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 60px;
+}
+.single-description ul{
+  list-style-position: inside;
+}
+.single-description ul li:first-child{
+  margin-top: 40px;
+}
+.single-description_img {
+  width: 100%;
+  height: 600px;
 }
 @media screen and (max-width: 640px) {
   .services-drilling_items {
@@ -7273,5 +7364,93 @@ footer {
   .video-play {
     width: 30px;
     height: 30px;
+  }
+  /* press center images page css code */
+  .images_items {
+    height: 650px;
+  }
+  .images-wrapper {
+    grid-template-columns: 100%;
+    padding: 20px;
+  }
+  .images-wrapper a {
+    width: 100%;
+  }
+  .press-center_images {
+    margin-top: 0px;
+  }
+  .images-category {
+    margin: -100px 0px 100px 0px;
+    padding: 10px 20px;
+    border: 1px solid var(--border-color);
+    width: 80%;
+    border-radius: 50px;
+    justify-content: space-between;
+    transition: 0.3s;
+  }
+  .images-category.active {
+    background-color: var(--snow);
+    color: var(--bg-color);
+  }
+  .img-menu {
+    width: 100%;
+    top: 70px;
+    right: 0px;
+  }
+  .img-menu-style {
+    top: 62px;
+    right: 85%;
+    transform: rotate(-30deg);
+  }
+  .images-item_detail {
+    display: none;
+  }
+  .images-item_detailSM {
+    color: var(--text-color);
+    display: block;
+  }
+  .images-item_detail--numberSM {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--snow);
+    width: 50px;
+    padding: 2px 10px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .images-item_detail--numberSM p {
+    font-size: 15px;
+  }
+  .images-item_detail--numberSM span i {
+    font-size: 10px;
+  }
+  /* single page */
+  .single{
+    margin-top: 100px;
+    padding: 20px;
+  }
+  .single-details{
+    flex-direction: column;
+    padding: 30px 0;
+    gap: 20px;
+  }
+  .single-detail{
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .single-title{
+    border-bottom: none;
+    padding: 0;
+  }
+  .single-year{
+    display: none;
+  }
+  .single-year_sm {
+    display: block;
+    color: var(--text-color);
   }
 }

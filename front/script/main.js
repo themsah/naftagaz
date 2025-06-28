@@ -24,7 +24,8 @@ function initCommonFeatures() {
     ".report_items",
     ".call_items",
     ".video_items",
-    ".images_items"
+    ".images_items",
+    ".single_items",
   ];
   let header = null;
 
@@ -2167,12 +2168,35 @@ function initimagespage() {
   const imagesList = document.querySelector(".img-menu");
   const listStyle = document.querySelector(".img-menu-style");
   const categoryIcon = document.querySelector(".images-category_icon");
-  imagesBtn.addEventListener("click",()=>{
+  imagesBtn.addEventListener("click", () => {
+    imagesBtn.classList.toggle("active");
     imagesList.classList.toggle("active");
     listStyle.classList.toggle("active");
     categoryIcon.classList.toggle("active");
-  })
+  });
 }
+
+// press center single page
+// function initsinglepage() {
+//   gsap.registerPlugin(ScrollTrigger);
+
+//   const container = document.querySelector(".single-details");
+//   const rightContent = document.querySelector(".single-description");
+
+//   gsap.to(rightContent, {
+//     y: () => -(rightContent.scrollHeight - window.innerHeight),
+//     ease: "none",
+//     scrollTrigger: {
+//       trigger: container,
+//       start: "top top",
+//       end: () => `+=${rightContent.scrollHeight - window.innerHeight}`,
+//       scrub: true,
+//       pin: container,
+//       anticipatePin: 1,
+//       invalidateOnRefresh: true,
+//     },
+//   });
+// }
 // --- Main Initialization Block ---
 document.addEventListener("DOMContentLoaded", () => {
   // Always initialize common features
@@ -2193,7 +2217,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initServicesServicePage();
   } else if (document.body.classList.contains("page-contact")) {
     initcontactpage();
-  }else if(document.body.classList.contains("page-images")){
+  } else if (document.body.classList.contains("page-images")) {
     initimagespage();
+  } else if (document.body.classList.contains("page-single")) {
+    initsinglepage();
   }
 });
