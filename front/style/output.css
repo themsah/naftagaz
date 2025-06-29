@@ -4383,7 +4383,7 @@ footer {
 }
 /* call page */
 .call_header {
-  background-color: var(--bg-color);
+  background-color: var(--color);
 }
 .call {
   margin-top: 200px;
@@ -4726,19 +4726,20 @@ footer {
   display: flex;
   align-items: center;
   gap: 20px;
+  cursor: pointer;
 }
-.single-link_wrapper{
+.single-link_wrapper {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
-  border-bottom: 1px solid var(--border-color);
   padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
 }
-.single-link p{
+.single-link p {
   color: var(--bg-color);
 }
-.single-link span{
+.single-link span {
   background-color: var(--bg-color);
   color: var(--snow);
   width: 25px;
@@ -4747,9 +4748,27 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
+  position: relative;
 }
-.single-link span i{
+.single-link span i {
   font-size: 10px;
+}
+.single-link span:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-second-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  transition: 0.4s;
+  transform: scale(0);
+  z-index: -1;
+}
+.single-link:hover span::after {
+  transform: scale(1);
 }
 .single-details {
   display: flex;
@@ -4772,12 +4791,12 @@ footer {
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 60px;
 }
-.single-year{
+.single-year {
   display: flex;
   align-items: start;
   gap: 20px;
 }
-.single-year span{
+.single-year span {
   color: var(--bg-second-color);
   font-size: 105px;
   margin-top: -20px;
@@ -4792,10 +4811,10 @@ footer {
   align-items: start;
   gap: 60px;
 }
-.single-description ul{
+.single-description ul {
   list-style-position: inside;
 }
-.single-description ul li:first-child{
+.single-description ul li:first-child {
   margin-top: 40px;
 }
 .single-description_img {
@@ -7429,28 +7448,32 @@ footer {
     font-size: 10px;
   }
   /* single page */
-  .single{
+  .single {
     margin-top: 100px;
     padding: 20px;
   }
-  .single-details{
+  .single-details {
     flex-direction: column;
     padding: 30px 0;
     gap: 20px;
   }
-  .single-detail{
+  .single-detail {
+    width: 100%;
     flex-direction: column-reverse;
     gap: 20px;
   }
-  .single-title{
+  .single-title {
     border-bottom: none;
     padding: 0;
   }
-  .single-year{
+  .single-year {
     display: none;
   }
   .single-year_sm {
     display: block;
     color: var(--text-color);
+  }
+  .single-description {
+    width: 100%;
   }
 }

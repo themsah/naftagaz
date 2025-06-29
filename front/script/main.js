@@ -96,6 +96,17 @@ function initCommonFeatures() {
             hideHeader = true;
           }
         }
+      } else if (document.body.classList.contains("page-single")) {
+        const singleDescription = document.querySelector(".single-description");
+        if (singleDescription) {
+          const top =
+            singleDescription.getBoundingClientRect().top + window.scrollY;
+          const bottom = top + singleDescription.offsetHeight;
+
+          if (currentScrollY >= top && currentScrollY <= bottom) {
+            hideHeader = true;
+          }
+        }
       }
 
       if (hideHeader) {
@@ -2177,26 +2188,44 @@ function initimagespage() {
 }
 
 // press center single page
-// function initsinglepage() {
-//   gsap.registerPlugin(ScrollTrigger);
+function initsinglepage() {
+  const container = document.querySelector(".single-details");
+  const pinned = document.querySelector(".single-detail");
+  const scrollable = document.querySelector(".single-description");
 
-//   const container = document.querySelector(".single-details");
-//   const rightContent = document.querySelector(".single-description");
+  if (!container || !pinned || !scrollable) return;
 
-//   gsap.to(rightContent, {
-//     y: () => -(rightContent.scrollHeight - window.innerHeight),
-//     ease: "none",
-//     scrollTrigger: {
-//       trigger: container,
-//       start: "top top",
-//       end: () => `+=${rightContent.scrollHeight - window.innerHeight}`,
-//       scrub: true,
-//       pin: container,
-//       anticipatePin: 1,
-//       invalidateOnRefresh: true,
-//     },
-//   });
-// }
+  let scrollTriggerInstance;
+
+  function setupScrollTrigger() {
+    if (window.innerWidth >= 768) {
+      // فقط در دسکتاپ فعال کن
+      scrollTriggerInstance = ScrollTrigger.create({
+        trigger: container,
+        start: "top top",
+        end: () => {
+          const extra = scrollable.scrollHeight - pinned.offsetHeight;
+          return "+=" + (extra > 0 ? extra : 0);
+        },
+        pin: pinned,
+        scrub: true,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+      });
+    }
+  }
+
+  setupScrollTrigger();
+
+  // اگه resize شد، دوباره بررسی کن
+  window.addEventListener("resize", () => {
+    if (scrollTriggerInstance) {
+      scrollTriggerInstance.kill();
+      scrollTriggerInstance = null;
+    }
+    setupScrollTrigger(); // دوباره بساز اگر لازمه
+  });
+}
 // --- Main Initialization Block ---
 document.addEventListener("DOMContentLoaded", () => {
   // Always initialize common features
