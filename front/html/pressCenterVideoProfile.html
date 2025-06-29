@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="../style/all.css" />
+    <link rel="stylesheet" href="../style/output.css" />
+  </head>
+  <body class="scrollbar-custom videoProfile-page">
+    <section class="images-profile_detail">
+      <div class="btns">
+        <a href="#">
+          <span class="btn close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </span>
+        </a>
+        <span class="btn next-btn slid-btn">
+          <i class="fa-solid fa-chevron-right"></i>
+        </span>
+        <span class="btn prev-btn slid-btn">
+          <i class="fa-solid fa-chevron-left"></i>
+        </span>
+      </div>
+      <p>
+        دیمیتری آرتیوخوف فرماندار منطقه خودمختار یامال-ننتس از مرکز آموزشی
+        نفتگاز-رضویتیه بازدید کرد.
+      </p>
+    </section>
+    <section class="video-style">
+      <video id="myVideo" src="../video/13047-244747059_large.mp4"></video>
+      <div class="controls">
+        <button id="playBtn"><i class="fas fa-play"></i></button>
+        <div class="time" id="timeDisplay">00:00 / 00:00</div>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="volume-container">
+          <button id="muteBtn"><i class="fas fa-volume-up"></i></button>
+        </div>
+      </div>
+    </section>
+    <script>
+      const video = document.getElementById("myVideo");
+      const playBtn = document.getElementById("playBtn");
+      const playIcon = playBtn.querySelector("i");
+      const progressContainer = document.getElementById("progressContainer");
+      const progressBar = document.getElementById("progressBar");
+      const timeDisplay = document.getElementById("timeDisplay");
+      const muteBtn = document.getElementById("muteBtn");
+      const volumeIcon = muteBtn.querySelector("i");
+      const volumeSlider = document.getElementById("volumeSlider");
+
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins.toString().padStart(2, "0")}:${secs
+          .toString()
+          .padStart(2, "0")}`;
+      }
+
+      video.addEventListener("loadedmetadata", () => {
+        timeDisplay.textContent = `00:00 / ${formatTime(video.duration)}`;
+      });
+
+      video.addEventListener("timeupdate", () => {
+        const percent = (video.currentTime / video.duration) * 100;
+        progressBar.style.width = percent + "%";
+        timeDisplay.textContent = `${formatTime(
+          video.currentTime
+        )} / ${formatTime(video.duration)}`;
+      });
+
+      playBtn.addEventListener("click", () => {
+        if (video.paused) {
+          video.play();
+          playIcon.classList.remove("fa-play");
+          playIcon.classList.add("fa-pause");
+        } else {
+          video.pause();
+          playIcon.classList.remove("fa-pause");
+          playIcon.classList.add("fa-play");
+        }
+      });
+
+      progressContainer.addEventListener("click", (e) => {
+        const width = progressContainer.clientWidth;
+        const clickX = e.offsetX;
+        video.currentTime = (clickX / width) * video.duration;
+      });
+      muteBtn.addEventListener("click", () => {
+        video.muted = !video.muted;
+
+        if (video.muted) {
+          volumeIcon.classList.replace("fa-volume-up", "fa-volume-mute");
+        } else {
+          volumeIcon.classList.replace("fa-volume-mute", "fa-volume-up");
+        }
+      });
+    </script>
+  </body>
+</html>
