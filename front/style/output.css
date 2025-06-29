@@ -4529,11 +4529,14 @@ footer {
   width: 150px;
   height: 150px;
 }
+.video-play_one i {
+  font-size: 30px;
+}
 .video-play {
   width: 60px;
   height: 60px;
 }
-.video-items_video span i {
+.video-play i {
   font-size: 12px;
 }
 .video-wrapper
@@ -4820,6 +4823,87 @@ footer {
 .single-description_img {
   width: 100%;
   height: 600px;
+}
+/* images profile page css code */
+.imagesProfile-page {
+  background-color: var(--bg-color);
+}
+.images-profile_detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--snow);
+}
+.images-profile_detail p {
+  width: 30%;
+  margin-left: 100px;
+}
+.btns {
+  display: flex;
+  flex-direction: column;
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+}
+.btn {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+.close-btn {
+  color: var(--snow);
+  background-color: var(--bg-second-color);
+}
+.close-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: var(--snow);
+  width: 100%;
+  height: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+.close-btn:hover {
+  color: var(--bg-second-color);
+}
+.close-btn:hover::after {
+  height: 100%;
+}
+.next-btn {
+  border-bottom: 1px solid var(--border-second-color);
+}
+.slid-btn {
+  background-color: var(--color);
+}
+.slid-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--bg-second-color);
+  transition: 0.3s;
+  z-index: -1;
+}
+.slid-btn:hover:after {
+  height: 100%;
+}
+.mySwiper .swiper-slide-thumb-active::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 33px;
+  width: 80%;
+  height: 2px;
+  background-color: var(--bg-second-color);
 }
 @media screen and (max-width: 640px) {
   .services-drilling_items {
@@ -7475,5 +7559,10 @@ footer {
   }
   .single-description {
     width: 100%;
+  }
+  /* images profile page css code */
+  .images-profile_detail p {
+    width: 50%;
+    margin-left: 20px;
   }
 }
