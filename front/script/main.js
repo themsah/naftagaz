@@ -2226,6 +2226,33 @@ function initsinglepage() {
     setupScrollTrigger(); // دوباره بساز اگر لازمه
   });
 }
+
+// press center news page
+function initnewspage() {
+  const pressDescription = document.querySelector(".press-center_description");
+  const btn = document.querySelector(".press-center_description--btn");
+  btn.addEventListener("click", () => {
+    pressDescription.classList.add("active");
+  });
+}
+
+// press center media pege
+function initmediapage() {
+  const pressDescription = document.querySelector(".press-center_description");
+  const btn = document.querySelector(".press-center_description--btn");
+  btn.addEventListener("click", () => {
+    pressDescription.classList.add("active");
+  });
+}
+
+// press center video page
+function initvideopage() {
+  const videoWrapper = document.querySelector(".video-wrapper");
+  const btn = document.querySelector(".press-center_description--btn");
+  btn.addEventListener("click", () => {
+    videoWrapper.classList.add("active");
+  });
+}
 // --- Main Initialization Block ---
 document.addEventListener("DOMContentLoaded", () => {
   // Always initialize common features
@@ -2250,5 +2277,11 @@ document.addEventListener("DOMContentLoaded", () => {
     initimagespage();
   } else if (document.body.classList.contains("page-single")) {
     initsinglepage();
+  } else if (document.body.classList.contains("page-news")) {
+    initnewspage();
+  } else if (document.body.classList.contains("page-media")) {
+    initmediapage();
+  } else if (document.body.classList.contains("page-video")) {
+    initvideopage();
   }
 });

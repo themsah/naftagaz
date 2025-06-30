@@ -156,7 +156,7 @@ header.hide-header {
   gap: 30px;
   position: relative;
 }
-.header__detail-items a {
+.header__detail-phone {
   color: var(--snow);
 }
 .header__detail-btns {
@@ -222,14 +222,14 @@ header.hide-header {
   height: 15px;
   display: block;
 }
-.header__contact a {
+.header__contact--phone {
   color: var(--bg-second-color);
   font-size: 60px;
   transition: all 0.4s;
   border-bottom: 1px solid var(--border-color);
   height: 100px;
 }
-.header__contact a:hover {
+.header__contact--phone:hover {
   color: var(--bg-color);
 }
 .header__contact-text {
@@ -250,7 +250,7 @@ header.hide-header {
   align-items: center;
   justify-content: space-between;
 }
-.header__contact-btn {
+.header__contact-btn a {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -263,7 +263,7 @@ header.hide-header {
   cursor: pointer;
   transition: all 0.3s;
 }
-.header__contact-btn::before {
+.header__contact-btn a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -274,7 +274,7 @@ header.hide-header {
   left: 0;
   z-index: -1;
 }
-.header__contact-btn:hover::before {
+.header__contact-btn a:hover::before {
   height: 100%;
 }
 .header__contact-icon {
@@ -338,7 +338,7 @@ header .sub-menuxl li::before {
 header .sub-menuxl li:hover::before {
   width: 100%;
 }
-header .sub-menuxl li a {
+header .sub-menuxl li > a {
   width: 100%;
   height: 100%;
   display: flex;
@@ -347,10 +347,10 @@ header .sub-menuxl li a {
   position: relative;
   color: var(--snow);
 }
-header .sub-menuxl li a i {
+header .sub-menuxl li > a i {
   font-size: 10px;
 }
-header .sub-menuxl li a ul {
+header .sub-menuxl li ul {
   position: absolute;
   top: 50px;
   padding-block: 60px;
@@ -364,12 +364,13 @@ header .sub-menuxl li a ul {
   display: flex;
   align-items: center;
   gap: 0;
+  list-style: none;
 }
-header .sub-menuxl li a:hover ul {
+header .sub-menuxl li:hover ul {
   opacity: 1;
   visibility: visible;
 }
-header .sub-menuxl li a ul::before {
+header .sub-menuxl li ul::before {
   content: "";
   position: absolute;
   width: 0;
@@ -381,33 +382,35 @@ header .sub-menuxl li a ul::before {
   transform: rotate(30deg);
   right: -5px;
 }
-header .sub-menuxl li a ul li {
-  color: black;
+header .sub-menuxl li ul li {
   border-left: 1px solid var(--border-color);
   background-color: var(--snow);
   padding: 30px;
   width: 300px;
   height: 250px;
+}
+header .sub-menuxl li ul li a{
+  color: var(--black);
   display: flex;
   flex-direction: column;
   gap: 130px;
   align-items: start;
 }
-header .sub-menuxl li a ul li:last-child {
+header .sub-menuxl li ul li:last-child {
   border-left: none;
 }
-header .sub-menuxl li a ul li img {
+header .sub-menuxl li ul li  img {
   opacity: 0;
   visibility: hidden;
   transition: all 0.6s;
   position: absolute;
   right: 80px;
 }
-header .sub-menuxl li a ul li:hover img {
+header .sub-menuxl li ul li:hover img {
   opacity: 1;
   visibility: visible;
 }
-header .sub-menuxl li a ul li span {
+header .sub-menuxl li  ul li span {
   background-color: var(--bg-second-color);
   color: var(--snow);
   width: 25px;
@@ -422,7 +425,7 @@ header .sub-menuxl li a ul li span {
   z-index: 1;
   font-size: 10px;
 }
-header .sub-menuxl li a ul li span::before {
+header .sub-menuxl li ul li span::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -435,9 +438,9 @@ header .sub-menuxl li a ul li span::before {
   transform: scale(0);
   z-index: -1;
 }
-header .sub-menuxl li a ul li:hover span::before {
+header .sub-menuxl li ul li:hover span::before {
   transform: scale(1);
-}
+} 
 /* company_detail */
 .company-detail {
   display: flex;
@@ -476,6 +479,10 @@ header .sub-menuxl li a ul li:hover span::before {
   position: relative;
   z-index: 1;
 }
+.company-detail_title a{
+  color: var(--black);
+  height: 110px;
+}
 .company-detail_text {
   display: flex;
   flex-direction: column;
@@ -494,7 +501,7 @@ header .sub-menuxl li a ul li:hover span::before {
   justify-content: center;
   color: var(--snow);
   padding: 3px;
-  transform: translateX(-220px) translateY(-20px);
+  transform: translateX(-220px) translateY(10px);
   position: relative;
   z-index: 1;
 }
@@ -2179,6 +2186,7 @@ header .sub-menuxl li a ul li:hover span::before {
 .company-pressCenter_detail--itemsText {
   height: 80%;
   z-index: -2;
+  color: var(--bg-color);
 }
 .company-pressCenter_detail--itemsTextHover {
   opacity: 0;
@@ -3966,12 +3974,13 @@ footer {
   width: 600px;
   color: var(--bg-color);
 }
-.security-hotline_description--learn {
+.security-hotline_description--learn a {
   display: flex;
   align-items: center;
   gap: 20px;
+  color: var(--bg-color);
 }
-.security-hotline_description--learn span {
+.security-hotline_description--learn a span {
   width: 30px;
   height: 30px;
   border-radius: 100%;
@@ -3984,10 +3993,10 @@ footer {
   align-items: center;
   justify-content: center;
 }
-.security-hotline_description--learn span i {
+.security-hotline_description--learn a span i {
   font-size: 10px;
 }
-.security-hotline_description--learn span::before {
+.security-hotline_description--learn a span::before {
   content: "";
   position: absolute;
   top: 0;
@@ -4000,7 +4009,7 @@ footer {
   transition: 0.4s;
   z-index: -1;
 }
-.security-hotline_description--learn span:hover::before {
+.security-hotline_description--learn a span:hover::before {
   transform: scale(1);
 }
 /* news page */
@@ -4208,6 +4217,18 @@ footer {
   display: flex;
   flex-direction: column;
   margin-top: 70px;
+  height: 1500px;
+  overflow: hidden;
+}
+.press-center_description--report {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}
+.press-center_description.active{
+  height: max-content;
+  overflow: auto;
 }
 .press-center_description--details {
   display: flex;
@@ -4286,6 +4307,9 @@ footer {
 .press-center_description--year span {
   color: var(--bg-second-color);
   font-size: 60px;
+}
+.press-center_description--year p{
+  color: var(--text-color);
 }
 .press-center_description--yearSm {
   display: none;
@@ -4486,6 +4510,12 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 50%);
   gap: 4rem 1rem;
+  height: 2500px;
+  overflow: hidden;
+}
+.video-wrapper.active{
+  overflow-y: auto;
+  height: max-content;
 }
 .video-items_one {
   grid-column: 1/3;
@@ -5092,7 +5122,7 @@ footer {
     padding: 20px;
     list-style: none;
   }
-  .hamburger-menu__list a {
+  .hamburger-menu__list a{
     color: var(--snow);
     font-size: 20px;
   }
@@ -5108,6 +5138,9 @@ footer {
     overflow: hidden;
     transition: all 0.2s;
     position: relative;
+  }
+  .menuSm:nth-child(2){
+    margin-bottom: -25px;
   }
   .menuSmActive {
     overflow: visible;
@@ -5137,11 +5170,11 @@ footer {
     height: 100px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     position: absolute;
-    top: 50px;
+    top: 40px;
   }
-  .sub-menuSm span {
+  .sub-menuSm_link {
     border-bottom: 1px solid var(--border-second-color);
     height: 40px;
   }
@@ -5152,9 +5185,6 @@ footer {
     width: 100%;
     padding: 20px;
     position: relative;
-  }
-  .hamburger-menu__title a {
-    color: var(--snow);
   }
   .header__detail-btns {
     display: flex;
@@ -5190,7 +5220,7 @@ footer {
     z-index: 1001;
     visibility: hidden;
   }
-  .header__contact a {
+  .header__contact--phone{
     font-size: 24px;
     color: var(--bg-second-color);
     height: auto;
@@ -5225,6 +5255,10 @@ footer {
   }
   .header__detail-items {
     display: none;
+  }
+  .header__contact-icon i{
+    color: var(--bg-second-color);
+    font-size: 12px;
   }
   header .sub-menuxl {
     display: none;
